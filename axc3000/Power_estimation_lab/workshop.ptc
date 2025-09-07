@@ -1,0 +1,370 @@
+{
+    "blocks": {
+        "apply_margin_group": [
+            {
+                "ThermalApplyMargin": "0%"
+            }
+        ],
+        "calc_mode_group": [
+            {
+                "ThermalCalcMode": "Find available thermal margin for cooling solution"
+            }
+        ],
+        "clock_row_group": [
+            {
+                "CLOCKUSERINPUT_CLOCK_FREQ": "400",
+                "CLOCKUSERINPUT_DOMAIN": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop",
+                "CLOCKUSERINPUT_FANOUT": "1000",
+                "CLOCKUSERINPUT_GLOBAL_EN": "100%",
+                "CLOCKUSERINPUT_LOCAL_EN": "100%",
+                "CLOCKUSERINPUT_MODULE": "",
+                "CLOCKUSERINPUT_USER_COMMENTS": "",
+                "CLOCKUSERINPUT_UTILIZATION_FACTOR": "6"
+            },
+            {
+                "CLOCKUSERINPUT_CLOCK_FREQ": "400",
+                "CLOCKUSERINPUT_DOMAIN": "|workshop|workshop",
+                "CLOCKUSERINPUT_FANOUT": "1000",
+                "CLOCKUSERINPUT_GLOBAL_EN": "100%",
+                "CLOCKUSERINPUT_LOCAL_EN": "100%",
+                "CLOCKUSERINPUT_MODULE": "",
+                "CLOCKUSERINPUT_USER_COMMENTS": "",
+                "CLOCKUSERINPUT_UTILIZATION_FACTOR": "6"
+            }
+        ],
+        "cpu_group": [
+            {
+                "HPSUSERINPUT_CPU_APP": "Off",
+                "HPSUSERINPUT_CPU_FREQUENCY": "0",
+                "HPSUSERINPUT_CPU_NUM_A53_CORES": "0",
+                "HPSUSERINPUT_CPU_NUM_A55_CORES": "0",
+                "HPSUSERINPUT_CPU_NUM_A76_CORES": "0",
+                "HPSUSERINPUT_L3_CACHE_SIZE": "0",
+                "HPSUSERINPUT_UNUSED_CORES_TREATMENT": "Power Up Unused Cores",
+                "HPS_INSTANCE_PATH": "",
+                "HPS_MODULE": "",
+                "HPS_SWITCH": "OFF",
+                "HPS_VCCL_HPSVoltage": "N/A"
+            }
+        ],
+        "device_definition": [
+            {
+                "Device": "A3CY100BM16A"
+            }
+        ],
+        "dsp_row_group": [
+            {
+                "DSPUSERINPUT_CLOCK_ENABLE": "100%",
+                "DSPUSERINPUT_CLOCK_FREQ": "400",
+                "DSPUSERINPUT_COEFFICIENT": "No",
+                "DSPUSERINPUT_CONFIG": "Two 18X18",
+                "DSPUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|toplevel",
+                "DSPUSERINPUT_MODULE": "topcore\n",
+                "DSPUSERINPUT_NUM_INSTANCES": "64",
+                "DSPUSERINPUT_PREADDER": "No",
+                "DSPUSERINPUT_REGISTERED_STAGES": "4",
+                "DSPUSERINPUT_TOGGLE_RATE": "12.5%",
+                "DSPUSERINPUT_USER_COMMENTS": ""
+            },
+            {
+                "DSPUSERINPUT_CLOCK_ENABLE": "100%",
+                "DSPUSERINPUT_CLOCK_FREQ": "400",
+                "DSPUSERINPUT_COEFFICIENT": "No",
+                "DSPUSERINPUT_CONFIG": "Two 18X18",
+                "DSPUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|toplevel",
+                "DSPUSERINPUT_MODULE": "topcore\n",
+                "DSPUSERINPUT_NUM_INSTANCES": "64",
+                "DSPUSERINPUT_PREADDER": "No",
+                "DSPUSERINPUT_REGISTERED_STAGES": "4",
+                "DSPUSERINPUT_TOGGLE_RATE": "12.5%",
+                "DSPUSERINPUT_USER_COMMENTS": ""
+            }
+        ],
+        "family_definition": [
+            {
+                "Family": "Agilex 3"
+            }
+        ],
+        "hbm_freq_group": [
+            {
+                "HBMUSERINPUT_HBM0_FREQUENCY": "0",
+                "HBMUSERINPUT_HBM1_FREQUENCY": "0"
+            }
+        ],
+        "io_row_group": [
+            {
+                "IOUSERINPUT_AC_LANES": "0",
+                "IOUSERINPUT_APPLICATION": "GPIO",
+                "IOUSERINPUT_BANK_ID": "2A_B",
+                "IOUSERINPUT_CLOCK_FREQ": "400",
+                "IOUSERINPUT_COUNT": "20",
+                "IOUSERINPUT_DATA_RATE": "SDR",
+                "IOUSERINPUT_DQS_PINS": "0",
+                "IOUSERINPUT_DQ_PINS": "0",
+                "IOUSERINPUT_INPUT_ENABLE": "50%",
+                "IOUSERINPUT_INPUT_TERMINATION": "Off",
+                "IOUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|toplevel",
+                "IOUSERINPUT_IO_STANDARD": "1.2-V",
+                "IOUSERINPUT_MODULE": "topcore\n",
+                "IOUSERINPUT_OUTPUT_ENABLE": "50%",
+                "IOUSERINPUT_OUTPUT_LOAD": "0",
+                "IOUSERINPUT_OUTPUT_TERMINATION": "Series 34 Ohm",
+                "IOUSERINPUT_PIN_DIR": "Bi-directional",
+                "IOUSERINPUT_PRE_EMPHASIS": "Off",
+                "IOUSERINPUT_REGISTERED_PIN": "NO",
+                "IOUSERINPUT_SLEW_RATE": "0",
+                "IOUSERINPUT_TOGGLE_RATE": "12.5%",
+                "IOUSERINPUT_USER_COMMENTS": "",
+                "IOUSERINPUT_VOD": "N/A"
+            },
+            {
+                "IOUSERINPUT_AC_LANES": "0",
+                "IOUSERINPUT_APPLICATION": "GPIO",
+                "IOUSERINPUT_BANK_ID": "2A_T",
+                "IOUSERINPUT_CLOCK_FREQ": "400",
+                "IOUSERINPUT_COUNT": "20",
+                "IOUSERINPUT_DATA_RATE": "SDR",
+                "IOUSERINPUT_DQS_PINS": "0",
+                "IOUSERINPUT_DQ_PINS": "0",
+                "IOUSERINPUT_INPUT_ENABLE": "50%",
+                "IOUSERINPUT_INPUT_TERMINATION": "Off",
+                "IOUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop",
+                "IOUSERINPUT_IO_STANDARD": "1.2-V",
+                "IOUSERINPUT_MODULE": "",
+                "IOUSERINPUT_OUTPUT_ENABLE": "50%",
+                "IOUSERINPUT_OUTPUT_LOAD": "0",
+                "IOUSERINPUT_OUTPUT_TERMINATION": "Series 34 Ohm",
+                "IOUSERINPUT_PIN_DIR": "Bi-directional",
+                "IOUSERINPUT_PRE_EMPHASIS": "Off",
+                "IOUSERINPUT_REGISTERED_PIN": "NO",
+                "IOUSERINPUT_SLEW_RATE": "0",
+                "IOUSERINPUT_TOGGLE_RATE": "12.5%",
+                "IOUSERINPUT_USER_COMMENTS": "",
+                "IOUSERINPUT_VOD": "N/A"
+            },
+            {
+                "IOUSERINPUT_AC_LANES": "0",
+                "IOUSERINPUT_APPLICATION": "GPIO",
+                "IOUSERINPUT_BANK_ID": "3A_B",
+                "IOUSERINPUT_CLOCK_FREQ": "400",
+                "IOUSERINPUT_COUNT": "20",
+                "IOUSERINPUT_DATA_RATE": "SDR",
+                "IOUSERINPUT_DQS_PINS": "0",
+                "IOUSERINPUT_DQ_PINS": "0",
+                "IOUSERINPUT_INPUT_ENABLE": "50%",
+                "IOUSERINPUT_INPUT_TERMINATION": "Off",
+                "IOUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop",
+                "IOUSERINPUT_IO_STANDARD": "1.2-V",
+                "IOUSERINPUT_MODULE": "",
+                "IOUSERINPUT_OUTPUT_ENABLE": "50%",
+                "IOUSERINPUT_OUTPUT_LOAD": "0",
+                "IOUSERINPUT_OUTPUT_TERMINATION": "Series 34 Ohm",
+                "IOUSERINPUT_PIN_DIR": "Bi-directional",
+                "IOUSERINPUT_PRE_EMPHASIS": "Off",
+                "IOUSERINPUT_REGISTERED_PIN": "NO",
+                "IOUSERINPUT_SLEW_RATE": "0",
+                "IOUSERINPUT_TOGGLE_RATE": "12.5%",
+                "IOUSERINPUT_USER_COMMENTS": "",
+                "IOUSERINPUT_VOD": "N/A"
+            },
+            {
+                "IOUSERINPUT_AC_LANES": "0",
+                "IOUSERINPUT_APPLICATION": "GPIO",
+                "IOUSERINPUT_BANK_ID": "3A_T",
+                "IOUSERINPUT_CLOCK_FREQ": "0",
+                "IOUSERINPUT_COUNT": "20",
+                "IOUSERINPUT_DATA_RATE": "SDR",
+                "IOUSERINPUT_DQS_PINS": "0",
+                "IOUSERINPUT_DQ_PINS": "0",
+                "IOUSERINPUT_INPUT_ENABLE": "50%",
+                "IOUSERINPUT_INPUT_TERMINATION": "Off",
+                "IOUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop",
+                "IOUSERINPUT_IO_STANDARD": "1.2-V",
+                "IOUSERINPUT_MODULE": "",
+                "IOUSERINPUT_OUTPUT_ENABLE": "50%",
+                "IOUSERINPUT_OUTPUT_LOAD": "0",
+                "IOUSERINPUT_OUTPUT_TERMINATION": "Series 34 Ohm",
+                "IOUSERINPUT_PIN_DIR": "Bi-directional",
+                "IOUSERINPUT_PRE_EMPHASIS": "Off",
+                "IOUSERINPUT_REGISTERED_PIN": "NO",
+                "IOUSERINPUT_SLEW_RATE": "0",
+                "IOUSERINPUT_TOGGLE_RATE": "12.5%",
+                "IOUSERINPUT_USER_COMMENTS": "",
+                "IOUSERINPUT_VOD": "N/A"
+            }
+        ],
+        "io_unused_banks_group": [
+            {
+                "IOUSERINPUT_UNUSED_HVIO_BANKS": "1.8V",
+                "IOUSERINPUT_UNUSED_IO_BANKS": "1.2V"
+            }
+        ],
+        "logic_row_group": [
+            {
+                "LOGICUSERINPUT_CLOCK_FREQ": "400",
+                "LOGICUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop",
+                "LOGICUSERINPUT_MODULE": "",
+                "LOGICUSERINPUT_NUM_FF": "76000",
+                "LOGICUSERINPUT_NUM_HALF_ALM": "58000",
+                "LOGICUSERINPUT_ROUTING_FACTOR": "3",
+                "LOGICUSERINPUT_TOGGLE_RATE": "12.5%",
+                "LOGICUSERINPUT_USER_COMMENTS": ""
+            },
+            {
+                "LOGICUSERINPUT_CLOCK_FREQ": "400",
+                "LOGICUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop",
+                "LOGICUSERINPUT_MODULE": "",
+                "LOGICUSERINPUT_NUM_FF": "2000",
+                "LOGICUSERINPUT_NUM_HALF_ALM": "3880",
+                "LOGICUSERINPUT_ROUTING_FACTOR": "3",
+                "LOGICUSERINPUT_TOGGLE_RATE": "12.5%",
+                "LOGICUSERINPUT_USER_COMMENTS": ""
+            }
+        ],
+        "package_definition": [
+            {
+                "Package": "M16A"
+            }
+        ],
+        "pll_row_group": [
+            {
+                "PLLUSERINPUT_BANK_ID": "2A_T/2A_B",
+                "PLLUSERINPUT_COUNTERS": "1",
+                "PLLUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|toplevel",
+                "PLLUSERINPUT_MODULE": "topcore\n",
+                "PLLUSERINPUT_NUM_BLOCKS": "1",
+                "PLLUSERINPUT_TYPE": "I/O Bank IOPLL",
+                "PLLUSERINPUT_USER_COMMENTS": "",
+                "PLLUSERINPUT_VCO_FREQ": "600"
+            },
+            {
+                "PLLUSERINPUT_BANK_ID": "2A_T/2A_B",
+                "PLLUSERINPUT_COUNTERS": "1",
+                "PLLUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop",
+                "PLLUSERINPUT_MODULE": "",
+                "PLLUSERINPUT_NUM_BLOCKS": "1",
+                "PLLUSERINPUT_TYPE": "I/O Bank IOPLL",
+                "PLLUSERINPUT_USER_COMMENTS": "",
+                "PLLUSERINPUT_VCO_FREQ": "600"
+            },
+            {
+                "PLLUSERINPUT_BANK_ID": "3A_T/3A_B",
+                "PLLUSERINPUT_COUNTERS": "1",
+                "PLLUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop",
+                "PLLUSERINPUT_MODULE": "",
+                "PLLUSERINPUT_NUM_BLOCKS": "1",
+                "PLLUSERINPUT_TYPE": "I/O Bank IOPLL",
+                "PLLUSERINPUT_USER_COMMENTS": "",
+                "PLLUSERINPUT_VCO_FREQ": "600"
+            },
+            {
+                "PLLUSERINPUT_BANK_ID": "3A_T/3A_B",
+                "PLLUSERINPUT_COUNTERS": "1",
+                "PLLUSERINPUT_INSTANCE_PATH": "|workshop|workshop",
+                "PLLUSERINPUT_MODULE": "",
+                "PLLUSERINPUT_NUM_BLOCKS": "1",
+                "PLLUSERINPUT_TYPE": "I/O Bank IOPLL",
+                "PLLUSERINPUT_USER_COMMENTS": "",
+                "PLLUSERINPUT_VCO_FREQ": "600"
+            }
+        ],
+        "power_char_definition": [
+            {
+                "PowerChar": "Maximum"
+            }
+        ],
+        "ram_row_group": [
+            {
+                "RAMUSERINPUT_BLOCK_ID": "N/A",
+                "RAMUSERINPUT_DEPTH": "1",
+                "RAMUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|toplevel",
+                "RAMUSERINPUT_MODE": "True Dual Port",
+                "RAMUSERINPUT_MODULE": "topcore\n",
+                "RAMUSERINPUT_NUM_BLOCKS": "113",
+                "RAMUSERINPUT_PORT_A_CLOCK_FREQ": "400",
+                "RAMUSERINPUT_PORT_A_ENABLE": "50%",
+                "RAMUSERINPUT_PORT_A_RDEN": "50%",
+                "RAMUSERINPUT_PORT_A_WREN": "50%",
+                "RAMUSERINPUT_PORT_B_CLOCK_FREQ": "0",
+                "RAMUSERINPUT_PORT_B_ENABLE": "50%",
+                "RAMUSERINPUT_PORT_B_RDEN": "50%",
+                "RAMUSERINPUT_PORT_B_WREN": "50%",
+                "RAMUSERINPUT_PORT_C_WREN": "0%",
+                "RAMUSERINPUT_PORT_D_RDEN": "0%",
+                "RAMUSERINPUT_TOGGLE_RATE": "50%",
+                "RAMUSERINPUT_TYPE": "M20K",
+                "RAMUSERINPUT_UNOC_MODE": "N/A",
+                "RAMUSERINPUT_UNOC_PORT_ENABLE": "N/A",
+                "RAMUSERINPUT_UNOC_PORT_WREN": "N/A",
+                "RAMUSERINPUT_USER_COMMENTS": "",
+                "RAMUSERINPUT_WIDTH": "1"
+            },
+            {
+                "RAMUSERINPUT_BLOCK_ID": "N/A",
+                "RAMUSERINPUT_DEPTH": "1",
+                "RAMUSERINPUT_INSTANCE_PATH": "|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|workshop|toplevel",
+                "RAMUSERINPUT_MODE": "True Dual Port",
+                "RAMUSERINPUT_MODULE": "topcore\n",
+                "RAMUSERINPUT_NUM_BLOCKS": "113",
+                "RAMUSERINPUT_PORT_A_CLOCK_FREQ": "400",
+                "RAMUSERINPUT_PORT_A_ENABLE": "50%",
+                "RAMUSERINPUT_PORT_A_RDEN": "50%",
+                "RAMUSERINPUT_PORT_A_WREN": "50%",
+                "RAMUSERINPUT_PORT_B_CLOCK_FREQ": "0",
+                "RAMUSERINPUT_PORT_B_ENABLE": "50%",
+                "RAMUSERINPUT_PORT_B_RDEN": "50%",
+                "RAMUSERINPUT_PORT_B_WREN": "50%",
+                "RAMUSERINPUT_PORT_C_WREN": "0%",
+                "RAMUSERINPUT_PORT_D_RDEN": "0%",
+                "RAMUSERINPUT_TOGGLE_RATE": "50%",
+                "RAMUSERINPUT_TYPE": "M20K",
+                "RAMUSERINPUT_UNOC_MODE": "N/A",
+                "RAMUSERINPUT_UNOC_PORT_ENABLE": "N/A",
+                "RAMUSERINPUT_UNOC_PORT_WREN": "N/A",
+                "RAMUSERINPUT_USER_COMMENTS": "",
+                "RAMUSERINPUT_WIDTH": "1"
+            }
+        ],
+        "temp_grade_definition": [
+            {
+                "TempGrade": "Extended -7 Standard Power-Fixed"
+            }
+        ],
+        "thermal_inputs_group": [
+            {
+                "ThermalPsiCAInput": "0.5",
+                "ThermalTA": "50",
+                "ThermalTJMAX": "N/A"
+            }
+        ],
+        "thermal_parameters": [
+            {
+                "Main_User_Tj": "N/A"
+            }
+        ],
+        "thermal_recalc_group": [
+            {
+                "ThermalRecalcMode": "Automatic"
+            }
+        ],
+        "tsd_method_group": [
+            {
+                "ThermalTsdMethod": "Not supported"
+            }
+        ],
+        "xcvr_grade_definition": [
+            {
+                "XCVRGrade": "N/A"
+            }
+        ],
+        "xcvr_unused_banks_group": [
+            {
+                "HSSIUSERINPUT_UNUSED_HSSI_BANKS": "Preserve Unused Channels on Used and Unused Transceivers"
+            }
+        ]
+    },
+    "header": {
+        "EPE_IMPORT_VERSION": "4.13"
+    },
+    "ips": {}
+}
