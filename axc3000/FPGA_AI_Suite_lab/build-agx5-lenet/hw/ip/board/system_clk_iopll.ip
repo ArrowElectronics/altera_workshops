@@ -227,6 +227,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:fileSetRef>
           <ipxact:localName>QUARTUS_SYNTH</ipxact:localName>
         </ipxact:fileSetRef>
+        <ipxact:parameters></ipxact:parameters>
       </ipxact:componentInstantiation>
     </ipxact:instantiations>
     <ipxact:ports>
@@ -234,6 +235,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>refclk</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -246,6 +248,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>locked</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -258,6 +261,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>rst</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -270,6 +274,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>outclk_0</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -417,12 +422,12 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="system_info_device_family" type="string">
           <ipxact:name>system_info_device_family</ipxact:name>
           <ipxact:displayName>Device Family</ipxact:displayName>
-          <ipxact:value>Agilex 5</ipxact:value>
+          <ipxact:value>Agilex 3</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="system_info_device_component" type="string">
           <ipxact:name>system_info_device_component</ipxact:name>
           <ipxact:displayName>Component</ipxact:displayName>
-          <ipxact:value>A5EC008BM16AE6S</ipxact:value>
+          <ipxact:value>A3CY100BM16AE7S</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="system_info_device_iobank_rev" type="string">
           <ipxact:name>system_info_device_iobank_rev</ipxact:name>
@@ -432,7 +437,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="system_part_trait_speed_grade" type="string">
           <ipxact:name>system_part_trait_speed_grade</ipxact:name>
           <ipxact:displayName>Speed Grade Trait</ipxact:displayName>
-          <ipxact:value>6</ipxact:value>
+          <ipxact:value>7</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="system_part_trait_iobank_rev" type="string">
           <ipxact:name>system_part_trait_iobank_rev</ipxact:name>
@@ -534,6 +539,11 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>Enable physical output clock parameters</ipxact:displayName>
           <ipxact:value>false</ipxact:value>
         </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_use_fractional_division" type="bit">
+          <ipxact:name>gui_use_fractional_division</ipxact:name>
+          <ipxact:displayName>Enable fractional division</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
         <ipxact:parameter parameterId="gui_pll_bandwidth_preset" type="string">
           <ipxact:name>gui_pll_bandwidth_preset</ipxact:name>
           <ipxact:displayName>PLL Bandwidth Preset</ipxact:displayName>
@@ -613,6 +623,11 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:name>gui_multiply_factor</ipxact:name>
           <ipxact:displayName>Multiply Factor (M-Counter)</ipxact:displayName>
           <ipxact:value>14</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_multiply_fraction" type="int">
+          <ipxact:name>gui_multiply_fraction</ipxact:name>
+          <ipxact:displayName>Multiply Factor (Fraction)</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="gui_divide_factor_n" type="int">
           <ipxact:name>gui_divide_factor_n</ipxact:name>
@@ -1612,12 +1627,12 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>A5EC008BM16AE6S</ipxact:value>
+          <ipxact:value>A3CY100BM16AE7S</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
           <ipxact:displayName>Device family</ipxact:displayName>
-          <ipxact:value>Agilex 5</ipxact:value>
+          <ipxact:value>Agilex 3</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
           <ipxact:name>deviceSpeedGrade</ipxact:name>
@@ -1634,6 +1649,14 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>bonusData</ipxact:displayName>
           <ipxact:value>bonusData 
 {
+   element $system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Agilex 5";
+         type = "String";
+      }
+   }
    element system_clk_iopll
    {
       datum _sortIndex

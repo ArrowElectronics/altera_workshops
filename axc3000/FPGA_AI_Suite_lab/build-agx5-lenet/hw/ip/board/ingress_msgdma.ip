@@ -1686,17 +1686,17 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="AUTO_DEVICE_FAMILY" type="string">
           <ipxact:name>AUTO_DEVICE_FAMILY</ipxact:name>
           <ipxact:displayName>Auto DEVICE_FAMILY</ipxact:displayName>
-          <ipxact:value>Agilex 7</ipxact:value>
+          <ipxact:value>Agilex 3</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="AUTO_DEVICE" type="string">
           <ipxact:name>AUTO_DEVICE</ipxact:name>
           <ipxact:displayName>Auto DEVICE</ipxact:displayName>
-          <ipxact:value>AGIB027R29A1E2VR3</ipxact:value>
+          <ipxact:value>A3CY100BM16AE7S</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="AUTO_DEVICE_SPEEDGRADE" type="string">
           <ipxact:name>AUTO_DEVICE_SPEEDGRADE</ipxact:name>
           <ipxact:displayName>Auto DEVICE_SPEEDGRADE</ipxact:displayName>
-          <ipxact:value>2</ipxact:value>
+          <ipxact:value>7</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="AUTO_BOARD" type="string">
           <ipxact:name>AUTO_BOARD</ipxact:name>
@@ -1706,7 +1706,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="AUTO_MM_READ_ADDRESS_MAP" type="string">
           <ipxact:name>AUTO_MM_READ_ADDRESS_MAP</ipxact:name>
           <ipxact:displayName>Auto ADDRESS_MAP</ipxact:displayName>
-          <ipxact:value>&lt;address-map&gt;&lt;slave name='ingress_onchip_memory.s2' start='0x200000' end='0x280000' datawidth='128' /&gt;&lt;/address-map&gt;</ipxact:value>
+          <ipxact:value>&lt;address-map&gt;&lt;slave name='ingress_onchip_memory.s2' start='0x200000' end='0x201000' datawidth='128' /&gt;&lt;/address-map&gt;</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="AUTO_MM_READ_ADDRESS_WIDTH" type="string">
           <ipxact:name>AUTO_MM_READ_ADDRESS_WIDTH</ipxact:name>
@@ -1871,12 +1871,12 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>AGIB027R29A1E2VR3</ipxact:value>
+          <ipxact:value>A3CY100BM16AE7S</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
           <ipxact:displayName>Device family</ipxact:displayName>
-          <ipxact:value>Agilex 7</ipxact:value>
+          <ipxact:value>Agilex 3</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
           <ipxact:name>deviceSpeedGrade</ipxact:name>
@@ -1897,7 +1897,7 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _originalDeviceFamily
       {
-         value = "Agilex 7";
+         value = "Agilex 5";
          type = "String";
       }
    }
@@ -3157,7 +3157,7 @@ https://fpgasoftware.intel.com/eula.-->
                 &lt;suppliedSystemInfos&gt;
                     &lt;entry&gt;
                         &lt;key&gt;ADDRESS_MAP&lt;/key&gt;
-                        &lt;value&gt;&amp;lt;address-map&amp;gt;&amp;lt;slave name='ingress_onchip_memory.s2' start='0x200000' end='0x280000' datawidth='128' /&amp;gt;&amp;lt;/address-map&amp;gt;&lt;/value&gt;
+                        &lt;value&gt;&amp;lt;address-map&amp;gt;&amp;lt;slave name='ingress_onchip_memory.s2' start='0x200000' end='0x201000' datawidth='128' /&amp;gt;&amp;lt;/address-map&amp;gt;&lt;/value&gt;
                     &lt;/entry&gt;
                     &lt;entry&gt;
                         &lt;key&gt;ADDRESS_WIDTH&lt;/key&gt;

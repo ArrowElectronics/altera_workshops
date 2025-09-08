@@ -15,8 +15,8 @@ https://fpgasoftware.intel.com/eula.-->
 <ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
   <ipxact:vendor>Intel Corporation</ipxact:vendor>
   <ipxact:library>dla_csr_axi_bridge</ipxact:library>
-  <ipxact:name>mem_dla_csr_axi</ipxact:name>
-  <ipxact:version>19.9.3</ipxact:version>
+  <ipxact:name>dla_csr_bridge_3</ipxact:name>
+  <ipxact:version>19.9.5</ipxact:version>
   <ipxact:busInterfaces>
     <ipxact:busInterface>
       <ipxact:name>clk</ipxact:name>
@@ -785,6 +785,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:fileSetRef>
           <ipxact:localName>QUARTUS_SYNTH</ipxact:localName>
         </ipxact:fileSetRef>
+        <ipxact:parameters></ipxact:parameters>
       </ipxact:componentInstantiation>
     </ipxact:instantiations>
     <ipxact:ports>
@@ -792,6 +793,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>aclk</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -804,6 +806,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>aresetn</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -906,6 +909,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_awvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -918,6 +922,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_awready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -966,6 +971,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_wvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -978,6 +984,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_wready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1008,6 +1015,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_bvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1020,6 +1028,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_bready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1122,6 +1131,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_arvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1134,6 +1144,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_arready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1182,6 +1193,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_rlast</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1194,6 +1206,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_rvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1206,6 +1219,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>s0_rready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1272,6 +1286,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_awvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1284,6 +1299,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_awready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1332,6 +1348,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_wlast</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1344,6 +1361,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_wvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1356,6 +1374,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_wready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1386,6 +1405,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_bvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1398,6 +1418,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_bready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1464,6 +1485,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_arvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1476,6 +1498,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_arready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1524,6 +1547,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_rvalid</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1536,6 +1560,7 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:name>m0_rready</ipxact:name>
         <ipxact:wire>
           <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
           <ipxact:wireTypeDefs>
             <ipxact:wireTypeDef>
               <ipxact:typeName>STD_LOGIC</ipxact:typeName>
@@ -1551,7 +1576,7 @@ https://fpgasoftware.intel.com/eula.-->
       <ipxact:vendor>Intel Corporation</ipxact:vendor>
       <ipxact:library>dla_csr_axi_bridge</ipxact:library>
       <ipxact:name>altera_axi_bridge</ipxact:name>
-      <ipxact:version>19.9.3</ipxact:version>
+      <ipxact:version>19.9.5</ipxact:version>
     </altera:entity_info>
     <altera:altera_module_parameters>
       <ipxact:parameters>
@@ -1775,14 +1800,24 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>Data Width</ipxact:displayName>
           <ipxact:value>32</ipxact:value>
         </ipxact:parameter>
-        <ipxact:parameter parameterId="UNTRANSLATED_TXN" type="string">
+        <ipxact:parameter parameterId="UNTRANSLATED_TXN" type="int">
           <ipxact:name>UNTRANSLATED_TXN</ipxact:name>
-          <ipxact:displayName>Enable</ipxact:displayName>
-          <ipxact:value>FALSE</ipxact:value>
+          <ipxact:displayName>Enable Untranslated Transaction</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="CACHESTASHING_TXN" type="int">
+          <ipxact:name>CACHESTASHING_TXN</ipxact:name>
+          <ipxact:displayName>Enable CACHESTASHING Transaction</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="ATOMIC_TXN" type="int">
+          <ipxact:name>ATOMIC_TXN</ipxact:name>
+          <ipxact:displayName>Enable ATOMIC Transaction</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="SID_WIDTH" type="int">
           <ipxact:name>SID_WIDTH</ipxact:name>
-          <ipxact:displayName>SID WIDTH</ipxact:displayName>
+          <ipxact:displayName>SID Width</ipxact:displayName>
           <ipxact:value>1</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="WRITE_ADDR_USER_WIDTH" type="int">
@@ -1848,6 +1883,16 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="USE_M0_ARUSER" type="int">
           <ipxact:name>USE_M0_ARUSER</ipxact:name>
           <ipxact:displayName>Use ARUSER signal</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="USE_M0_ARSNOOP" type="int">
+          <ipxact:name>USE_M0_ARSNOOP</ipxact:name>
+          <ipxact:displayName>Use ARSNOOP signal</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="USE_M0_AWSNOOP" type="int">
+          <ipxact:name>USE_M0_AWSNOOP</ipxact:name>
+          <ipxact:displayName>Use AWSNOOP signal</ipxact:displayName>
           <ipxact:value>0</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="USE_M0_WUSER" type="int">
@@ -2052,12 +2097,12 @@ https://fpgasoftware.intel.com/eula.-->
         <ipxact:parameter parameterId="device" type="string">
           <ipxact:name>device</ipxact:name>
           <ipxact:displayName>Device</ipxact:displayName>
-          <ipxact:value>AGFB014R24B2E2V</ipxact:value>
+          <ipxact:value>A3CY100BM16AE7S</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceFamily" type="string">
           <ipxact:name>deviceFamily</ipxact:name>
           <ipxact:displayName>Device family</ipxact:displayName>
-          <ipxact:value>Agilex 7</ipxact:value>
+          <ipxact:value>Agilex 3</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
           <ipxact:name>deviceSpeedGrade</ipxact:name>
@@ -2078,12 +2123,20 @@ https://fpgasoftware.intel.com/eula.-->
    {
       datum _originalDeviceFamily
       {
-         value = "Agilex 7";
+         value = "Agilex 5";
          type = "String";
       }
    }
+   element dla_csr_bridge_3
+   {
+   }
    element mem_dla_csr_axi
    {
+      datum _originalVersion
+      {
+         value = "19.9.3";
+         type = "String";
+      }
    }
 }
 </ipxact:value>
@@ -2876,13 +2929,13 @@ https://fpgasoftware.intel.com/eula.-->
       </ipxact:parameters>
     </altera:altera_system_parameters>
     <altera:altera_interface_boundary>
-      <altera:interface_mapping altera:name="clk" altera:internal="mem_dla_csr_axi.clk" altera:type="clock" altera:dir="end">
+      <altera:interface_mapping altera:name="clk" altera:internal="dla_csr_bridge_3.clk" altera:type="clock" altera:dir="end">
         <altera:port_mapping altera:name="aclk" altera:internal="aclk"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="clk_reset" altera:internal="mem_dla_csr_axi.clk_reset" altera:type="reset" altera:dir="end">
+      <altera:interface_mapping altera:name="clk_reset" altera:internal="dla_csr_bridge_3.clk_reset" altera:type="reset" altera:dir="end">
         <altera:port_mapping altera:name="aresetn" altera:internal="aresetn"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="m0" altera:internal="mem_dla_csr_axi.m0" altera:type="axi4" altera:dir="start">
+      <altera:interface_mapping altera:name="m0" altera:internal="dla_csr_bridge_3.m0" altera:type="axi4" altera:dir="start">
         <altera:port_mapping altera:name="m0_araddr" altera:internal="m0_araddr"></altera:port_mapping>
         <altera:port_mapping altera:name="m0_arid" altera:internal="m0_arid"></altera:port_mapping>
         <altera:port_mapping altera:name="m0_arprot" altera:internal="m0_arprot"></altera:port_mapping>
@@ -2906,7 +2959,7 @@ https://fpgasoftware.intel.com/eula.-->
         <altera:port_mapping altera:name="m0_wstrb" altera:internal="m0_wstrb"></altera:port_mapping>
         <altera:port_mapping altera:name="m0_wvalid" altera:internal="m0_wvalid"></altera:port_mapping>
       </altera:interface_mapping>
-      <altera:interface_mapping altera:name="s0" altera:internal="mem_dla_csr_axi.s0" altera:type="axi4" altera:dir="end">
+      <altera:interface_mapping altera:name="s0" altera:internal="dla_csr_bridge_3.s0" altera:type="axi4" altera:dir="end">
         <altera:port_mapping altera:name="s0_araddr" altera:internal="s0_araddr"></altera:port_mapping>
         <altera:port_mapping altera:name="s0_arburst" altera:internal="s0_arburst"></altera:port_mapping>
         <altera:port_mapping altera:name="s0_arid" altera:internal="s0_arid"></altera:port_mapping>
