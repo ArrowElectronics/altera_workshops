@@ -1,0 +1,12 @@
+{
+  "design_name": "agx7_iseries_ddrfree",
+  "arch_file": "/nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/AGX7_Streaming_Ddrfree_MLP_v1_3.arch",
+  "build_dir": "build-agx7-mlp",
+  "ip_dir": "build-agx7-mlp/coredla_ip",
+  "num_instances": 1,
+  "seed": 1,
+  "parameter_rom_dir": "/nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/dlac-out-mlpv3/parameter_rom",
+  "quartus_project": "build-agx7-mlp/hw",
+  "build_unlicensed_ip": false,
+  "__BuildContext__": true
+}

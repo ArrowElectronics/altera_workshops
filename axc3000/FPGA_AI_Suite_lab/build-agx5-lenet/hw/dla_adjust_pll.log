@@ -1,0 +1,265 @@
+Info: *******************************************************************
+Info: Running Quartus Prime Compiler Database Interface
+    Info: Version 25.1.0 Build 129 03/26/2025 SC Pro Edition
+    Info: Copyright (C) 2025  Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, the Altera Quartus Prime License Agreement,
+    Info: the Altera IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Altera and sold by Altera or its authorized distributors.  Please
+    Info: refer to the Altera Software License Subscription Agreements 
+    Info: on the Quartus Prime software download page.
+    Info: Processing started: Thu Apr 24 16:58:51 2025
+    Info: System process ID: 52140
+Info: Command: quartus_cdb -t dla_adjust_pll.tcl
+Info: Running adjust PLLs script
+Info: Project name: top
+Info: Revision name: top
+Info: Adjusting PLL iteration: 1
+Info: Using AI Suite IP at /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/coredla_ip/altera_ai_ip/verilog/AGX7_Streaming_Ddrfree_MLP_v1_3_AGX7
+Info (16677): Loading final database.
+Info (16734): Loading "final" snapshot for partition "root_partition".
+Info (16734): Loading "final" snapshot for partition "auto_fab_0".
+Info (16678): Successfully loaded final database: elapsed time is 00:00:20.
+Info: Device family name is Agilex 7
+Info: Device part name is AGIB027R29A1E2VR3
+Info: Speedgrade is 2
+Info: Calculating maximum fmax...
+Info: Clock board_inst|kernel_pll|kernel_pll_outclk0
+Info:   Period: 1.666
+Info:   Restricted Fmax from STA: 5000.0
+Info:     Setup slack: 0.004
+Info:     Recovery slack: 0.640
+Info:     normalized Recovery slack: 0.04
+Info:     Minimum Pulse Width slack: 0.142
+Info:   Adjusted period: 1.662 (-0.004, Setup)
+Info:   Fmax: 601.68
+Warning: Could not find clock: *kernel_pll*outclk1.  Clock is not required assuming 10 GHz and proceeding.
+Info: Kernel Fmax determined to be 601.68
+Info (16677): Loading final database.
+Info (16734): Loading "final" snapshot for partition "root_partition".
+Info (16734): Loading "final" snapshot for partition "auto_fab_0".
+Info (16678): Successfully loaded final database: elapsed time is 00:00:11.
+Info: Found kernel_pll: board_inst|kernel_pll|kernel_pll|tennm_pll
+Info: PLL reference clock frequency:
+Info:   100.0 MHz
+Info: Desired kernel_clk frequency:
+Info:   601.68 MHz
+Info: Actual kernel_clk frequency:
+Info:   600.0 MHz
+Info: Calling ::quartus::pll::legality::get_physical_parameters_for_generation
+Info: device_family = Agilex 7
+Info: device_speedgrade = 2
+Info: refclk = 100.0
+Info: IOPLL settings adjusted successfully for current revision
+Info: 000
+Info (20274): Successfully committed final database.
+Info: Generating acl_quartus_report.txt
+Info: Launching STA
+Info: Using AI Suite IP at /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/coredla_ip/altera_ai_ip/verilog/AGX7_Streaming_Ddrfree_MLP_v1_3_AGX7
+Info (20030): Parallel compilation is enabled and will use 24 of the 44 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 25.1.0 Build 129 03/26/2025 SC Pro Edition
+    Info: Processing started: Thu Apr 24 17:02:53 2025
+    Info: System process ID: 60393
+Info: Command: quartus_sta top -c top --dni --report_script=dla_failing_clocks.tcl --force_dat
+Info: qsta_default_script.tcl version: #1
+Info: Forcing Delay Annotation
+Info (16677): Loading final database.
+Info (16734): Loading "final" snapshot for partition "root_partition".
+Info (16734): Loading "final" snapshot for partition "auto_fab_0".
+Info (16678): Successfully loaded final database: elapsed time is 00:00:20.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 100 degrees C
+Warning (18291): Timing characteristics of device AGIB027R29A1E2VR3 are preliminary
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity altera_std_synchronizer
+        Info (332166): set_false_path -to [get_keepers {*altera_std_synchronizer:*|din_s1}]
+Info (19539): Reading the HDL-embedded SDC files elapsed 00:00:02.
+Info (332104): Reading SDC File: 'top.sdc'
+Warning (332049): Ignored create_clock at top.sdc(15): Option -waveform: Invalid waveform definition File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 15
+    Info (332050): create_clock -name {clk_sys_100m_p} -period 10.000 -waveform {0 10} {clk_sys_100m_p} File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 15
+Warning (332174): Ignored filter at top.sdc(17): fpga_reset_n[0] could not be matched with a port File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 17
+Warning (332049): Ignored set_false_path at top.sdc(17): Argument -from with value [get_ports {fpga_reset_n[0]}] contains zero elements File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 17
+    Info (332050): set_false_path -from [get_ports {fpga_reset_n[0]}] File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 17
+Warning (332174): Ignored filter at top.sdc(20): fpga_button_pio[0] could not be matched with a port File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 20
+Warning (332049): Ignored set_false_path at top.sdc(20): Argument -from with value [get_ports {fpga_button_pio[0]}] contains zero elements File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 20
+    Info (332050): set_false_path -from [get_ports {fpga_button_pio[0]}] -to * File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 20
+Warning (332174): Ignored filter at top.sdc(21): fpga_button_pio[1] could not be matched with a port File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 21
+Warning (332049): Ignored set_false_path at top.sdc(21): Argument -from with value [get_ports {fpga_button_pio[1]}] contains zero elements File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 21
+    Info (332050): set_false_path -from [get_ports {fpga_button_pio[1]}] -to * File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 21
+Warning (332174): Ignored filter at top.sdc(22): fpga_button_pio[2] could not be matched with a port File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 22
+Warning (332049): Ignored set_false_path at top.sdc(22): Argument -from with value [get_ports {fpga_button_pio[2]}] contains zero elements File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 22
+    Info (332050): set_false_path -from [get_ports {fpga_button_pio[2]}] -to * File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 22
+Warning (332174): Ignored filter at top.sdc(23): fpga_button_pio[3] could not be matched with a port File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 23
+Warning (332049): Ignored set_false_path at top.sdc(23): Argument -from with value [get_ports {fpga_button_pio[3]}] contains zero elements File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 23
+    Info (332050): set_false_path -from [get_ports {fpga_button_pio[3]}] -to * File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 23
+Warning (332174): Ignored filter at top.sdc(24): fpga_dipsw_pio[0] could not be matched with a port File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 24
+Warning (332049): Ignored set_false_path at top.sdc(24): Argument -from with value [get_ports {fpga_dipsw_pio[0]}] contains zero elements File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 24
+    Info (332050): set_false_path -from [get_ports {fpga_dipsw_pio[0]}] -to * File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 24
+Warning (332174): Ignored filter at top.sdc(25): fpga_dipsw_pio[1] could not be matched with a port File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 25
+Warning (332049): Ignored set_false_path at top.sdc(25): Argument -from with value [get_ports {fpga_dipsw_pio[1]}] contains zero elements File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 25
+    Info (332050): set_false_path -from [get_ports {fpga_dipsw_pio[1]}] -to * File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 25
+Warning (332174): Ignored filter at top.sdc(26): fpga_dipsw_pio[2] could not be matched with a port File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 26
+Warning (332049): Ignored set_false_path at top.sdc(26): Argument -from with value [get_ports {fpga_dipsw_pio[2]}] contains zero elements File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 26
+    Info (332050): set_false_path -from [get_ports {fpga_dipsw_pio[2]}] -to * File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 26
+Warning (332174): Ignored filter at top.sdc(27): fpga_dipsw_pio[3] could not be matched with a port File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 27
+Warning (332049): Ignored set_false_path at top.sdc(27): Argument -from with value [get_ports {fpga_dipsw_pio[3]}] contains zero elements File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 27
+    Info (332050): set_false_path -from [get_ports {fpga_dipsw_pio[3]}] -to * File: /nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/top.sdc Line: 27
+Info (332104): Reading SDC File: 'board/hs_clk_xer_1941/synth/alt_hiconnect_handshake_clock_crosser.sdc'
+Info (18794): Reading SDC File: 'board/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|jtag_to_avalon|jtag_to_avalon|rst_controller'
+Info (18794): Reading SDC File: 'board/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|rst_controller'
+Info (18794): Reading SDC File: 'board/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|rst_controller_001'
+Info (18794): Reading SDC File: 'board/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|rst_controller_002'
+Info (18794): Reading SDC File: 'board/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|rst_controller_003'
+Info (332104): Reading SDC File: 'ip/board/jtag_to_avalon/altera_jtag_dc_streaming_191/synth/altera_avalon_st_jtag_interface.sdc'
+Info (18794): Reading SDC File: 'ip/board/jtag_to_avalon/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|jtag_to_avalon|jtag_to_avalon|rst_controller'
+Info (18794): Reading SDC File: 'ip/board/jtag_to_avalon/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|rst_controller'
+Info (18794): Reading SDC File: 'ip/board/jtag_to_avalon/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|rst_controller_001'
+Info (18794): Reading SDC File: 'ip/board/jtag_to_avalon/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|rst_controller_002'
+Info (18794): Reading SDC File: 'ip/board/jtag_to_avalon/altera_reset_controller_1924/synth/altera_reset_controller.sdc' for instance: 'board_inst|rst_controller_003'
+Info (18794): Reading SDC File: 'ip/board/system_source/altera_in_system_sources_probes_1921/synth/altera_in_system_sources_probes.sdc' for instance: 'board_inst|system_source|system_source'
+Info (332104): Reading SDC File: 'ip/board/reset_release_inst/altera_s10_user_rst_clkgate_1948/synth/altera_s10_user_rst_clkgate_fm.sdc'
+Info: clock = _col61
+Info: number of internal_clk created = 1
+Info (332104): Reading SDC File: 'ip/board/kernel_pll/altera_iopll_2000/synth/kernel_pll_altera_iopll_2000_6ubmzgi.sdc'
+Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Info: Initializing PLL database for CORE kernel_pll_altera_iopll_2000_6ubmzgi
+Info: Finding port-to-pin mapping for CORE: kernel_pll_altera_iopll_2000_6ubmzgi INSTANCE: board_inst|kernel_pll|kernel_pll
+Info (332104): Reading SDC File: 'coredla_ip/altera_ai_ip/verilog/dla_clock_cross_sync.sdc'
+Info (332104): Reading SDC File: 'ip/board/system_clk_iopll/altera_iopll_2000/synth/system_clk_iopll_altera_iopll_2000_amnqfry.sdc'
+Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Info: Initializing PLL database for CORE system_clk_iopll_altera_iopll_2000_amnqfry
+Info: Finding port-to-pin mapping for CORE: system_clk_iopll_altera_iopll_2000_amnqfry INSTANCE: board_inst|system_clk_iopll|system_clk_iopll
+Info (332104): Reading SDC File: '/nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/qdb/_compiler/top/_flat/25.1.0/source/1/.temp/cpt_proxy/default_jtag.sdc'
+Info (19449): Reading SDC files elapsed 00:00:07.
+Warning (332060): Node: altera_reserved_tck was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|jtagpins|atom_inst|atom~soc_sdm/padsig_io1.reg__nff is being clocked by altera_reserved_tck
+Warning (332158): Clock uncertainty characteristics of the Agilex 7 device family are preliminary
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Using custom scripts: dla_failing_clocks.tcl
+Info (332146): Worst-case setup slack is 0.004
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):     0.004               0.000         0 board_inst|kernel_pll|kernel_pll_outclk0  Slow vid2 100C Model 
+    Info (332119):     1.755               0.000         0 board_inst|system_clk_iopll|system_clk_iopll_outclk0  Slow vid2 100C Model 
+Info (332146): Worst-case hold slack is 0.001
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):     0.001               0.000         0 board_inst|kernel_pll|kernel_pll_outclk0  Fast vid2 100C Model 
+    Info (332119):     0.008               0.000         0 board_inst|system_clk_iopll|system_clk_iopll_outclk0  Fast vid2 100C Model 
+Info (332146): Worst-case recovery slack is 0.640
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):     0.640               0.000         0 board_inst|kernel_pll|kernel_pll_outclk0  Slow vid2 100C Model 
+    Info (332119):     6.441               0.000         0 board_inst|system_clk_iopll|system_clk_iopll_outclk0  Slow vid2 100C Model 
+Info (332146): Worst-case removal slack is 0.148
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):     0.148               0.000         0 board_inst|system_clk_iopll|system_clk_iopll_outclk0   Fast vid2a 0C Model 
+    Info (332119):     0.153               0.000         0 board_inst|kernel_pll|kernel_pll_outclk0  Fast vid2 100C Model 
+Info (332140): No Setup paths to report
+Info (332140): No Recovery paths to report
+Info (332146): Worst-case minimum pulse width slack is 0.142
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):     0.142               0.000         0 board_inst|kernel_pll|kernel_pll_outclk0 Slow vid2b 100C Model 
+    Info (332119):     2.346               0.000         0 internal_clk  Slow vid2 100C Model 
+    Info (332119):     4.202               0.000         0 board_inst|system_clk_iopll|system_clk_iopll_outclk0 Slow vid2b 100C Model 
+    Info (332119):     4.385               0.000         0 board_inst|system_clk_iopll|system_clk_iopll_refclk  Slow vid2 100C Model 
+    Info (332119):     4.873               0.000         0 board_inst|kernel_pll|kernel_pll_n_cnt_clk  Slow vid2 100C Model 
+    Info (332119):     4.927               0.000         0 board_inst|system_clk_iopll|system_clk_iopll_n_cnt_clk  Slow vid2 100C Model 
+    Info (332119):    59.860               0.000         0 board_inst|kernel_pll|kernel_pll_m_cnt_clk  Slow vid2 100C Model 
+    Info (332119):    69.914               0.000         0 board_inst|system_clk_iopll|system_clk_iopll_m_cnt_clk  Slow vid2 100C Model 
+Info (332114): Report Metastability (Slow vid2 100C Model): Found 284 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): MTBF(design) = 1 / SUM(1 / MTBF(synchronizer chain))
+
+    Info (332114): Number of Synchronizer Chains Found: 284
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 0, or 0.0%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 43, or 15.1%
+    Info (332114): Worst Case Available Settling Time: 1.850 ns
+
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1037.4
+Info (332114): Report Metastability (Slow vid2b 100C Model): Found 284 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): MTBF(design) = 1 / SUM(1 / MTBF(synchronizer chain))
+
+    Info (332114): Number of Synchronizer Chains Found: 284
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 0, or 0.0%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 43, or 15.1%
+    Info (332114): Worst Case Available Settling Time: 1.856 ns
+
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1037.4
+Info (332114): Report Metastability (Fast vid2a 0C Model): Found 284 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): MTBF(design) = 1 / SUM(1 / MTBF(synchronizer chain))
+
+    Info (332114): Number of Synchronizer Chains Found: 284
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 0, or 0.0%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 43, or 15.1%
+    Info (332114): Worst Case Available Settling Time: 2.228 ns
+
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 413.3
+Info (332114): Report Metastability (Fast vid2a 100C Model): Found 284 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): MTBF(design) = 1 / SUM(1 / MTBF(synchronizer chain))
+
+    Info (332114): Number of Synchronizer Chains Found: 284
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 0, or 0.0%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 43, or 15.1%
+    Info (332114): Worst Case Available Settling Time: 2.184 ns
+
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3629.0
+Info (332114): Report Metastability (Fast vid2 100C Model): Found 284 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): MTBF(design) = 1 / SUM(1 / MTBF(synchronizer chain))
+
+    Info (332114): Number of Synchronizer Chains Found: 284
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Number of Chains For Which MTBFs Could Not be Calculated Due to Timing Violations: 0, or 0.0%.
+    Info (332114): Number of Chains Excluded from MTBF Analysis: 43, or 15.1%
+    Info (332114): Worst Case Available Settling Time: 2.175 ns
+
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3629.0
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info (21615): Running Design Assistant Rules for snapshot 'final'
+Info: No waiver waived any violations
+Info (22360): Design Assistant Results: 74 of 85 enabled rules passed, and 10 rules was disabled, in snapshot 'final'
+Warning (21620): Design Assistant Results: 5 of 34 High severity rules issued violations in snapshot 'final'. Please refer to DRC report '/nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/output_files/top.tq.drc.signoff.rpt' for more information
+Info (21621): Design Assistant Results: 4 of 36 Medium severity rules issued violations in snapshot 'final'. Please refer to DRC report '/nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/output_files/top.tq.drc.signoff.rpt' for more information
+Info (21622): Design Assistant Results: 2 of 15 Low severity rules issued violations in snapshot 'final'. Please refer to DRC report '/nfs/tor/disks/fae_work_mtcardos/CoreDLA/coredla-work-25.1/build-agx7-mlp/hw/output_files/top.tq.drc.signoff.rpt' for more information
+Info (24095): Timing requirements were met
+Info: There are no clock domains failing timing
+Info: Finished custom script, dla_failing_clocks.tcl : elapsed time is 00:00:01
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 7991 megabytes
+    Info: Processing ended: Thu Apr 24 17:04:29 2025
+    Info: Elapsed time: 00:01:36
+    Info: System process ID: 60393
+Info (19538): Reading SDC files took 00:00:07 cumulatively in this process.
+Info: No timing violations found
+Info (23030): Evaluation of Tcl script dla_adjust_pll.tcl was successful
+Info: Quartus Prime Compiler Database Interface was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 7907 megabytes
+    Info: Processing ended: Thu Apr 24 17:04:31 2025
+    Info: Elapsed time: 00:05:40
+    Info: System process ID: 52140

@@ -1,0 +1,158 @@
+*** lab setup ****
+
+setup environment
+	- export PATH="/mnt/c/altera_pro/25.1.1/syscon/bin:$PATH"
+	
+	- source ~/build-openvino-dev/openvino_env/bin/activate
+	- source /opt/intel/openvino_2024.6.0/setupvars.sh
+	- source /opt/altera/fpga_ai_suite_2025.1.1/dla/setupvars.sh
+	- dla_compiler --march $COREDLA_ROOT/example_architectures/AGX7_Performance.arch --fanalyze-area
+	
+create working directory
+	- mkdir ~/coredla_work && cd ~/coredla_work
+	- cp -a /mnt/c/altera_workshops/axc3000/FPGA_AI_Suite_lab/* ~/coredla_work
+
+define this as the working directory for fpga ai suite. install demo and runtime content	
+	- source dla_init_local_directory.sh	- do this only once
+	
+-------------------------------------------------------------
+*** model source and training ***
+
+referenced #https://nextjournal.com/gkoehler/pytorch-mnist
+	- changed log_softmax activation to softmax (fpga supports softmax not log_softmax)
+	- ran py model in colab - generated model.pth, copy to coredla_work in wsl2
+	
+-------------------------------------------------------------
+*** model conversion ***	
+
+prepare model for inference, convert from pytorch to IR (*** Note. error to be resolved ***)
+	- python convert-pt-2-onnx.py
+
+convert from ONNX to IR
+	- ovc Digit-classifier.onnx --compress_to_fp16 False
+	
+copy the file to lab folder in windows
+	- cp Digit-classifier.onnx /mnt/c/altera_workshops/axc3000/FPGA_AI_Suite_lab 
+	
+-------------------------------------------------------------
+*** design space exploration ***
+
+examine AGX5 performance architecture
+
+dla_compiler \
+--march $COREDLA_ROOT/example_architectures/AGX5_Performance.arch \
+--network-file ./Digit-classifier.xml \
+--foutput-format=open_vino_hetero \
+--o digit-classifier-bin.bin \
+--dumpdir work \
+--fanalyze-performance --fanalyze-area
+
+examine AGX5 DDrfree streaming architecture
+
+dla_compiler \
+--march ./AGX5_Streaming_Ddrfree_Softmax.arch \
+--network-file ./Digit-classifier.xml \
+--foutput-format=open_vino_hetero \
+--o digit-classifier-bin.bin \
+--fplugin=HETERO:FPGA --fanalyze-performance --fanalyze-area \
+--ffolding-option 0 \
+--dumpdir work
+
+-------------------------------------------------------------
+*** model software emulation with openvino runtime ***
+
+use extracted MNIST images of digits 0 to 9, located in data subdirectory, for verification
+	- cd $COREDLA_WORK/data
+	- python display-fp16-file.py array_hwc_fp16_5.bin  - review the extracted digits
+
+build the x86 executable for full sw emulation of the trained model on a desktop
+	-  cd $COREDLA_WORK/runtime  (*** Note. $COREDLA_WORK not assigned to any directory ***)
+	- ./build_runtime.sh -target_emulation
+
+	- cd $COREDLA_WORK/work
+
+benchmark the emulation version  of the model, this is running in a shell waiting for bin data input
+
+$COREDLA_WORK/runtime/build_Release/dla_benchmark/dla_benchmark \
+-b 1 \
+-niter 1 \
+-nireq 1 \
+-m ../Digit-classifier.xml \
+-d HETERO:FPGA \
+-streaming_input_pipe pipe \
+-arch_file ../AGX5_Streaming_Ddrfree_Softmax.arch \
+-dump_output \
+-folding_option 0 \
+-plugins emulation -dump_output
+
+once the above command is waiting for input, in another terminal window:
+	- cd ~/coredla_work/work
+	- cat ../data/array_hwc_fp16_5.bin > pipe
+	- cat result.txt
+	
+repeat with a different digit
+
+$COREDLA_WORK/runtime/build_Release/dla_benchmark/dla_benchmark \
+-b 1 \
+-niter 1 \
+-nireq 1 \
+-m ../Digit-classifier.xml \
+-d HETERO:FPGA \
+-streaming_input_pipe pipe \
+-arch_file ../AGX5_Streaming_Ddrfree_Softmax.arch \
+-dump_output \
+-folding_option 0 \
+-plugins emulation -dump_output
+
+	- cat ../data/array_hwc_fp16_8.bin > pipe
+	- cat result.txt
+	
+-------------------------------------------------------------
+*** create fpga ai suite dla ip core ***
+
+generate parameter rom for coredla ip
+	- cd $COREDLA_WORK
+dlac \
+--network-file ./Digit-classifier.xml \
+--march ./AGX5_Streaming_Ddrfree_Softmax.arch \
+--foutput-format=open_vino_hetero \
+--o digit_classifier-bin.bin \
+--fplugin HETERO:FPGA \
+--dumpdir ./dlac-out/ \
+--ffolding-option 0 \
+--fanalyze-performance --fanalyze-area
+
+generate the dla ip core
+dla_create_ip \
+--flow create_ip \
+--arch ./AGX5_Streaming_Ddrfree_Softmax.arch \
+--ip_dir ./build-agx5-lenet/coredla_ip \
+--parameter_rom_dir ./dlac-out/parameter_rom/ --licensed
+
+-------------------------------------------------------------
+*** build the hardware design
+
+copy dla ip core to example quartus/platform designer project
+	- cp -R build-agx5-lenet/coredla_ip /mnt/c/altera_workshops/axc3000/FPGA_AI_Suite_lab/build-agx5-lenet/hw/
+
+open quartus
+	- open platform designer and generate
+	- compile in quartus
+
+-------------------------------------------------------------	
+*** verify the design in hardware ***
+
+open the quartus programmer and download the sof
+
+create a digit with paint and save to agx5-platform-mode-dev-kit
+
+run the demo.sh shell script
+	- cd agx5-platform-mode-dev-kit
+	- source demo.sh
+		- convert diit from bmp to fp16 binary
+		- display the digit
+		- run inference on the fpga
+		- post process the ai ip output
+		- display the results
+
+
