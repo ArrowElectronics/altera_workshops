@@ -1,0 +1,113 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2025  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the Intel FPGA Software License Subscription Agreements 
+# on the Quartus Prime software download page.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 24.3.1 Build 102 01/14/2025 SC Pro Edition
+# Date created = 09:11:57  January 28, 2025
+#
+# -------------------------------------------------------------------------- #
+set_global_assignment -name FAMILY "Agilex 3"
+set_global_assignment -name TOP_LEVEL_ENTITY AXC3000_MIPI
+set_global_assignment -name PWRMGT_VOLTAGE_OUTPUT_FORMAT "LINEAR FORMAT"
+set_global_assignment -name PWRMGT_LINEAR_FORMAT_N "-12"
+set_global_assignment -name LAST_QUARTUS_VERSION "25.1.1 Pro Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name DEVICE A3CY100BM16AE7S
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_location_assignment PIN_A7 -to CLK_25M_C
+set_location_assignment PIN_AJ24 -to VSEL_1V3
+set_location_assignment PIN_AG21 -to LED1
+set_location_assignment PIN_AH22 -to RLED
+set_location_assignment PIN_AK21 -to GLED
+set_location_assignment PIN_AK20 -to BLED
+set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
+set_location_assignment PIN_A12 -to USER_BTN
+set_instance_assignment -name IO_STANDARD "1.2-V" -to USER_BTN -entity AXC3000_MIPI
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to USER_BTN -entity AXC3000_MIPI
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
+set_global_assignment -name ACTIVE_SERIAL_CLOCK AS_FREQ_25MHZ
+set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_25MHZ
+set_instance_assignment -name IO_STANDARD "1.2-V" -to CLK_25M_C -entity AXC3000_MIPI
+set_global_assignment -name BOARD default
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to VSEL_1V3 -entity AXC3000_MIPI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to LED1 -entity AXC3000_MIPI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to RLED -entity AXC3000_MIPI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GLED -entity AXC3000_MIPI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to BLED -entity AXC3000_MIPI
+set_location_assignment PIN_AH26 -to CAMERA_EN
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CAMERA_EN -entity AXC3000_MIPI
+set_location_assignment PIN_AJ29 -to CAMERA_SDA
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CAMERA_SDA -entity AXC3000_MIPI
+set_location_assignment PIN_AJ27 -to CAMERA_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CAMERA_SCL -entity AXC3000_MIPI
+set_location_assignment PIN_U4 -to MIPI_D1P
+set_location_assignment PIN_U3 -to MIPI_D1N
+set_instance_assignment -name IO_STANDARD DPHY -to MIPI_D1P -entity AXC3000_MIPI
+set_instance_assignment -name IO_STANDARD DPHY -to MIPI_D1N -entity AXC3000_MIPI
+set_location_assignment PIN_V3 -to MIPI_D0P
+set_location_assignment PIN_W3 -to MIPI_D0N
+set_instance_assignment -name IO_STANDARD DPHY -to MIPI_D0P -entity AXC3000_MIPI
+set_instance_assignment -name IO_STANDARD DPHY -to MIPI_D0N -entity AXC3000_MIPI
+set_instance_assignment -name IO_STANDARD DPHY -to MIPI_CLKP -entity AXC3000_MIPI
+set_instance_assignment -name IO_STANDARD DPHY -to MIPI_CLKN -entity AXC3000_MIPI
+set_location_assignment PIN_AD3 -to MIPI_RZQ
+set_instance_assignment -name IO_STANDARD "1.2-V" -to MIPI_RZQ -entity AXC3000_MIPI
+set_location_assignment PIN_AD5 -to MIPI_REFCLK
+set_instance_assignment -name IO_STANDARD "1.2-V" -to MIPI_REFCLK -entity AXC3000_MIPI
+set_location_assignment PIN_U5 -to MIPI_CLKP
+set_location_assignment PIN_T4 -to MIPI_CLKN
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
+set_location_assignment PIN_AG23 -to UART_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_RXD -entity AXC3000_MIPI
+set_location_assignment PIN_AG24 -to UART_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_TXD -entity AXC3000_MIPI
+set_global_assignment -name TCL_SCRIPT_FILE ../sources/AXC3000_mipi_pins.tcl
+set_global_assignment -name VERILOG_FILE ../sources/AXC3000_MIPI.v
+set_global_assignment -name SDC_FILE ../sources/AXC3000_MIPI.sdc
+set_global_assignment -name IP_FILE ip/niosv_system/niosv_system_clock_in.ip
+set_global_assignment -name QSYS_FILE niosv_system.qsys
+set_global_assignment -name IP_FILE ip/niosv_system/reset_release.ip
+set_global_assignment -name IP_FILE ip/niosv_system/niosv_m.ip
+set_global_assignment -name IP_FILE ip/niosv_system/onchip_memory.ip
+set_global_assignment -name IP_FILE ip/niosv_system/jtag_master.ip
+set_global_assignment -name IP_FILE ip/niosv_system/sys_id.ip
+set_global_assignment -name IP_FILE ip/niosv_system/reset_bridge.ip
+set_global_assignment -name IP_FILE ip/niosv_system/mipi_pio.ip
+set_global_assignment -name IP_FILE ip/niosv_system/rgb_pio.ip
+set_global_assignment -name QSYS_FILE mipi_system.qsys
+set_global_assignment -name IP_FILE ip/mipi_system/vvp_scaler.ip
+set_global_assignment -name IP_FILE ip/mipi_system/vid_mm_bridge.ip
+set_global_assignment -name IP_FILE ip/mipi_system/mipi_system_reset_in.ip
+set_global_assignment -name IP_FILE ip/mipi_system/mipi_dphy.ip
+set_global_assignment -name IP_FILE ip/mipi_system/vvp_demosaic.ip
+set_global_assignment -name IP_FILE ip/mipi_system/vvp_vfw.ip
+set_global_assignment -name IP_FILE ip/mipi_system/vvp_wbc.ip
+set_global_assignment -name IP_FILE ip/mipi_system/mipi_csi2.ip
+set_global_assignment -name IP_FILE ip/mipi_system/mipi_system_clock_in.ip
+set_global_assignment -name IP_FILE ip/niosv_system/onchip_vid_buf.ip
+set_global_assignment -name IP_FILE ip/niosv_system/iopll.ip
+set_global_assignment -name IP_FILE ip/niosv_system/camera_i2c.ip
+set_global_assignment -name IP_FILE ip/niosv_system/sysclk_bridge_o.ip
+set_global_assignment -name IP_FILE ip/niosv_system/lw_uart.ip
+set_global_assignment -name IP_FILE ip/niosv_system/one_ai_interface_0.ip
+set_global_assignment -name IP_FILE ip/niosv_system/image_source_0.ip

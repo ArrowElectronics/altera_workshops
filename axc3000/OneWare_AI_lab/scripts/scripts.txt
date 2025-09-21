@@ -1,0 +1,14 @@
+# Use these commands with NIOS-V C Code flow.
+
+# Apply generated BSP to the Application
+niosv-app --bsp_dir=software/OneWare_bsp --app_dir=software/OneWare_app -s=software/OneWare_app/niosv_mira220.c
+
+# Build Design in Ashling RiscFree
+riscfree -data software
+
+# Download the compiled ELF to run on the NIOS-V
+niosv-download -g -r -c 1 software/OneWare_app/build/Debug/OneWare_app.elf
+
+elf2hex software/OneWare_app/build/Debug/OneWare_app.elf -b 0x00000000 -w 32 -e 0x0000FFFF --record=4 -o Qpro/mipi.hex
+
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv

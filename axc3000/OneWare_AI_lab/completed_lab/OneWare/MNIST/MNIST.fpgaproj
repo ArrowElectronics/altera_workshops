@@ -1,0 +1,16 @@
+{
+  "Include": [
+    "*.vhd",
+    "*.vhdl",
+    "*.v",
+    "*.vcd",
+    "vhdl_ls.toml",
+    "*.oneai",
+    "*.onnx"
+  ],
+  "Exclude": [
+    "build"
+  ],
+  "Loader": "OpenFpgaLoader",
+  "Toolchain": "Yosys"
+}
