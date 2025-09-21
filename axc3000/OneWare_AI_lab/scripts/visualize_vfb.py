@@ -16,7 +16,7 @@ import time
 import threading
 from queue import Queue, Empty
 import socket
-import telnetlib
+import telnetlib3
 import serial
 import serial.tools.list_ports
 import re
