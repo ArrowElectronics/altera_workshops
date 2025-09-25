@@ -74,7 +74,7 @@ wsl -d Ubuntu-20.04
 
 11.3.8	Type the following commands in the second Ubuntu shell
 cd ~/coredla_work/work
-cat ../data/array_hwc_fp16_0.bin > pipe
+cat ../data/array_hwc_fp16_5.bin > pipe
 
 11.3.10	Type the following command in the second Ubuntu shell
 cat result.txt
