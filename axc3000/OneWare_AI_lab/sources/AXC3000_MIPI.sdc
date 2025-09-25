@@ -24,9 +24,9 @@ derive_clock_uncertainty
 # Set False Path
 #**************************************************************
 
-set_false_path -through [get_pins {iopll_inst|iopll_0|tennm_ph2_iopll|reset}]  
-set_false_path -from [get_clocks {iopll_inst|iopll_0_refclk}] -to [get_clocks {iopll_inst|iopll_0_clk_150MHz}]
-set_false_path -from [get_clocks {iopll_inst|iopll_0_clk_150MHz}] -to [get_clocks {iopll_inst|iopll_0_refclk}]
+set_false_path -through [get_pins {niosv_sys|iopll|iopll|tennm_ph2_iopll|reset}]  
+set_false_path -from [get_clocks {ClkIn}] -to [get_clocks {niosv_sys|iopll|iopll_outclk0}]
+set_false_path -from [get_clocks {niosv_sys|iopll|iopll_outclk0}] -to [get_clocks {ClkIn}]
 
 
 
