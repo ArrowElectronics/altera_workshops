@@ -1,0 +1,15 @@
+{
+    "clocks"    : {
+        "ip_fmax"  : "601.68 MHz",
+        "platform" : "600.0 MHz",
+        "ip_freq"  : "600.0 MHz"
+    },
+    "resources" : {
+        "dsp_blocks"        : [184,8528],
+        "block_memory_bits" : [6468988,271810560],
+        "alms"              : [55218,912800],
+        "aluts"             : 80810,
+        "m20ks"             : [697,13272],
+        "memory_labs"       : 136
+    }
+}

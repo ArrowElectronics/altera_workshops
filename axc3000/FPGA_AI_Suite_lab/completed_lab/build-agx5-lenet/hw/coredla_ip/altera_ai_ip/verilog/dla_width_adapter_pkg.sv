@@ -1,0 +1,43 @@
+`pragma protect begin_protected
+`pragma protect version=1
+`pragma protect author="Intel Corporation"
+`pragma protect encrypt_agent="Quartus Prime Pro Software"
+`pragma protect encrypt_agent_info="17.1"
+
+`pragma protect key_keyowner="Intel Corporation"
+`pragma protect key_method="rsa"
+`pragma protect key_keyname="Intel-FPGA-Quartus-RSA-1"
+`pragma protect encoding=(enctype = "base64", line_length = 76, bytes = 256)
+`pragma protect key_block
+OHh8W20TkbKMcubzVJXwkWzJc8y3gbszCWMPvuDVvHaIF7JSQbxVbQHAkUdaG7WviTtgt1h594+6
+yDmMVA/jD/rHXqj1EGDqrzGHiii1PYTFQ3jKw2OKPkMKng+ZCp7oH2M8jWB+eiyo9JC994a8+idM
+Gafe9Gjnad0mQFeNjtua9cghWicM7N2+eJk5ISzt4cWaaciJvnltN0u7Y5uBxyA9u97sSSqC+dyF
+36Hpj4kLlOh1TsSIzBrkybDv9LCExWWEUez4Jxv/Fdv25gMTD3HXnzsAab9vcdmLSueDg2C9cRrv
+jF6zGrYeAeCbp5XCV/x6TkxBHGL9/4c38rbLqg==
+
+`pragma protect data_method="aes128-cbc"
+`pragma protect encoding=(enctype = "base64", line_length = 76, bytes = 1232)
+`pragma protect data_block
+Oy2hRdfZpVKWZyNkvMnLnF3XCGPB5kGU3kIMLsKifIoJ3BJquRxixni0okIqu4t856iSuhYMSHQD
+4CuMhSumAflARmB876m97v4sQtQ1VS22GwIiTRTc/1rxn1GKuyI76050Yvi4jJ+C1pv4JaBo4+Qv
+O11eVQSsJrZ6K17lpyQ/EoyHy1NF/NvWjp148Sa/xneTcfNaH7i6aKsRVceG994wNivxn9SclPR7
+Vu3I2PIg67BPku6MN+wUJVjHJm/mQrIP2rh6uyARfgYPTJCGHRa/vt6yhZ7bs9acvwCVfiaBvGPY
+PKaIQGvjnQP50SHFHfzfVtgalPu6beNC/YEsTuCyA+/bluMjpt6iHcVOvq6qMTPjF2eiV5UuT3sk
+SO688jy0Vni9vbktqW6mpHUjbPs+kTlk13TkxUNOmCGp9n/jYD3OmPhQWJzhZByLTu7LscQ5wfI8
+q8y402ODILQMIaZw96BOc7Ce96xEXUOG0LL7VG5OGKJU+mb8zpXLsUPBwKt4mxeQpW5O5v9CVwMY
+uIgvTwpVLvGA8d81oYKLLZf3uplWLliDCcjoTrbzio78MDWIvpScuL7MzgU+XBRqTC0n8oloZxzg
+9LvKCzwGHE1/Q38wadQeyWcUFuXlLm3abSmAUyFrGbgUbSdJenqxNIvdVn8ghoj+Q4EVpmKopHo4
+b7w2CRPwPtskmvjfLvAI6ExGb35+npPF1JGeWildq7X0nRLSvE8f3n2wxjISPMYSK0ihqa+tRaw6
+j7F/BaMOJiOKNknVAX0m3zLpTJeB0qsXoAmPeto498Ny09Xy4nfuf9MGKBi/wns/KO64fFjONxEv
+TJ8BZDvLkqdhJzEPQXpQjW5LIu18ZrDBMPXnVNY3j+f2PfcnqS6XdeEAsqRboKdfSQ71ZzmBpEVu
+nP4Nsmtc8Vcki2/W7d2nVkUNktOmNZf1zU7XTOs2O/5HzPZ5+EWfQxveOOh+FAhloS91+AQm+C8g
+72twhJlQgTW6tEedi2yBiuPDqwoCe1cisY3GpGF8gXjsOzsV9tdp8LOAAfzvp5CkgHwBgngb7Kmr
+K9HgYWjvUvY3qHr1SBHe6o9hmH5ywynmAd7EZ2TeYCYScLL1j7Tzpvc92u/mUCBc14T815nD35U7
+m98MMlF1APPm5bMhH/AQrBfhjj0bMwFeV3Vpa1EEcKgCkrFEHGmq6JKRYIvFoX+Zru+bYZFocqf4
+rhB9SYBUoqfexm8A441QeYs0uqsMlfz3UjC2lZ7rd3TRcU8yqivX6fDCGSKY74gxTAZGXaG0RrgB
+aL/kPd8URv4TXfbQ/Pqu5bZOekaQK70SFkgrt8kdmwcrE+gLf0ypfkF0Z+1r3H/ewz76ZEZ7NkRU
+oXz5U3NKrqhP6VYZFtURL/1lP+ddkUfsEkuFUv/Y89aeh9F0iIICknj7ZAU5s/gA3GAPWs2df+Es
+rk/3hDZZW342VBXYV8umT6n/5yIFjN8DhOTze9gjSJipYV11nsOIJ/ZFGRTMabqQGXtVfRtrwjk+
+x4U8zwUiZMbJgPJlgEMxD/HTQjj8MeSTTjj21ZMjlJXLy5eTAq2YwxhWCohtsiFdIKi911LkKaG3
+CTD6STOMwY3mW0DNvduaNR3f2/0vjp+85arp1EV9+S+TZSA=
+`pragma protect end_protected

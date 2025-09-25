@@ -1,0 +1,195 @@
+family : 'AGX5'
+k_vector : 4
+c_vector : 4
+#arch_precision : FP12AGX
+arch_precision : FP11
+
+stream_buffer_depth : 2048
+
+enable_parameter_rom : true
+enable_debug : false
+
+#output_channels_max : 16384
+#output_image_height_max : 256
+#output_image_width_max : 256
+
+enable_eltwise_mult : true
+
+filter_size_width_max : 16
+filter_size_height_max : 16
+
+input_stream_interface {
+  enable: true
+  data_width: 128
+  fifo_depth : 128
+}
+
+output_stream_interface {
+  enable : true
+  data_width : 128
+  fifo_depth : 128
+}
+
+enable_lightweight_layout_transform : true
+# 96 => 12 pixels in parallel
+lightweight_layout_transform_params {
+  channels : 1
+  input_bus_width : 128
+  input_type : F16
+  enable_bias_scale : false
+}
+
+#enable_layout_transform : true
+#layout_transform_params {
+#  max_channels : 1
+#  max_feature_height : 28
+#  max_feature_width : 28
+#  max_feature_depth : 1
+#  max_stride_height : 2
+#  max_stride_width : 2
+#  max_stride_depth : 1
+#  max_pad_front : 0
+#  max_pad_left : 3
+#  max_pad_top : 3
+#  do_u8_fp16_conversion : false
+#}
+
+pe_array {
+  num_interleaved_features : 12
+  num_interleaved_filters : 1
+  exit_fifo_depth : 512
+}
+
+filter_scratchpad {
+  filter_depth : 1532
+  bias_scale_depth : 26
+}
+
+dma {
+  csr_addr_width : 11
+  csr_data_bytes : 4
+  ddr_addr_width : 32
+  ddr_burst_width : 4
+  ddr_data_bytes : 64
+  ddr_read_id_width : 2
+}
+
+activation {
+  generic_aux_parameters {
+    k_vector : 4
+  }
+  enable_clamp : false
+  enable_leaky_relu : false
+  enable_sigmoid : false
+  enable_relu : true
+}
+
+pool {
+  generic_aux_parameters {
+    k_vector: 4
+  }
+  max_window_height: 3
+  max_window_width: 3
+  max_stride_vertical: 4
+  max_stride_horizontal: 4
+}
+
+xbar {
+  xbar_k_vector : 4
+  max_input_interfaces : 5
+  max_output_interfaces : 5
+  xbar_ports {
+    xbar_aux_port {
+      name : 'activation'
+      input_connection : 'xbar_in_port'
+    }
+    xbar_aux_port {
+      name: "pool"
+      input_connection: "xbar_in_port"
+      input_connection: "activation"
+    }
+    xbar_aux_port {
+      name : 'softmax'
+      input_connection : 'xbar_in_port'
+    }
+}
+  xbar_in_port {
+    external_connection  : 'pe_array'
+  }
+  xbar_out_port {
+    external_connection : 'input_feeder'
+    external_connection : 'output_writer'
+    input_connection    : 'xbar_in_port'
+    input_connection: "pool"
+    input_connection    : 'activation'
+    input_connection    : 'softmax'
+  }
+}
+
+custom_aux_primitive {
+  generic_aux_parameters {
+    k_vector : 1
+  }
+  layer_type : 'softmax'
+  name       : 'softmax'
+  type       : ELTWISE_WITH_MEMORY
+  max_num_channels : 16
+}
+
+config_network {
+  config_cache_depth : 641
+  modules {
+    module {
+      name : 'filter_reader'
+      cross_clock : 1
+    }
+    module {
+      name : 'input_feeder_mux'
+    }
+    module {
+      name : 'input_feeder_writer'
+    }
+    module {
+      name : 'input_feeder_in'
+    }
+    module {
+      name : 'input_feeder_reader'
+    }
+    module {
+      name : 'input_feeder_out'
+    }
+    module {
+      name : 'feature_writer'
+      cross_clock : 1
+    }
+    module {
+      name : 'feature_reader'
+      cross_clock : 1
+    }
+    module {
+      name : 'xbar'
+    }
+    module {
+      name : 'activation'
+    }
+    module {
+      name: "pool"
+    }
+    module {
+      name : 'softmax'
+    }
+    module {
+      name : 'output_streamer'
+    }
+    module {
+      name : 'output_streamer_flush'
+    }
+    module {
+      name : 'writer_streamer_sel'
+    }
+    module {
+      name : 'layout_transform'
+      cross_clock : 1
+    }
+  }
+}

@@ -1,0 +1,6 @@
+set_parameter_value C_CSR_AXI_ADDR_WIDTH 11
+set_parameter_value C_CSR_AXI_DATA_WIDTH 32
+set_parameter_value C_DDR_AXI_ADDR_WIDTH 32
+set_parameter_value C_DDR_AXI_DATA_WIDTH 512
+set_parameter_value C_DDR_AXI_BURST_WIDTH 4
+set_parameter_value C_DDR_AXI_THREAD_ID_WIDTH 2

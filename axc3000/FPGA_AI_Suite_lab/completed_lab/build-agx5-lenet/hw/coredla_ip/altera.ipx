@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<library>
+<index file="altera_ai_ip/core_hw.tcl" />
+</library>

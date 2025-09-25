@@ -1,0 +1,166 @@
+// Copyright 2015-2020 Altera Corporation.
+//
+// This software and the related documents are Altera copyrighted materials,
+// and your use of them is governed by the express license under which they
+// were provided to you ("License"). Unless the License provides otherwise,
+// you may not use, modify, copy, publish, distribute, disclose or transmit
+// this software or the related documents without Altera's prior written
+// permission.
+//
+// This software and the related documents are provided as is, with no express
+// or implied warranties, other than those that are expressly stated in the
+// License.
+
+`default_nettype none
+
+
+module altera_ai_ip #(
+  // CSR AXI4-Lite Slave
+  parameter int     C_CSR_AXI_ADDR_WIDTH,
+  parameter int     C_CSR_AXI_DATA_WIDTH,
+
+  // DDR AVLMM Master
+  parameter int     C_DDR_AXI_ADDR_WIDTH,
+  parameter int     C_DDR_AXI_DATA_WIDTH,
+  parameter int     C_DDR_AXI_THREAD_ID_WIDTH,
+
+  parameter string  ARCH_OPTION,
+
+  // Width of various axi signals from the axi4 spec
+  localparam int    AXI_BURST_LENGTH_WIDTH=8,
+  localparam int    AXI_BURST_SIZE_WIDTH=3,
+  localparam int    AXI_BURST_TYPE_WIDTH=2
+) (
+  input   wire                                    dla_clk,
+  input  wire                                     ddr_clk,
+  input   wire                                    irq_clk,
+  input   wire                                    dla_resetn,
+
+  // Level sensitive interrupt to host, runs on irq clock
+  output  logic                                   irq_level,
+
+  // CSR to host (PCIe or HPS), runs on ddr clock and dla_resetn
+
+  input   wire         [C_CSR_AXI_ADDR_WIDTH-1:0] csr_axi_awaddr,
+  input   wire                              [2:0] csr_axi_awprot, // required by AXI standard. not used
+  input   wire                                    csr_axi_awvalid,
+  output  logic                                   csr_axi_awready,
+  input   wire         [C_CSR_AXI_DATA_WIDTH-1:0] csr_axi_wdata,
+  input   wire       [C_CSR_AXI_DATA_WIDTH/8-1:0] csr_axi_wstrb, // required by AXI standard. not used
+  input   wire                                    csr_axi_wvalid,
+  output  logic                                   csr_axi_wready,
+  input   wire                              [1:0] csr_axi_bresp, // required by AXI standard. not used
+  output  logic                                   csr_axi_bvalid,
+  input   wire                                    csr_axi_bready,
+  input   wire         [C_CSR_AXI_ADDR_WIDTH-1:0] csr_axi_araddr,
+  input   wire                              [2:0] csr_axi_arprot, // required by AXI standard. not used
+  input   wire                                    csr_axi_arvalid,
+  output  logic                                   csr_axi_arready,
+  output  logic        [C_CSR_AXI_DATA_WIDTH-1:0] csr_axi_rdata,
+  output  logic                             [1:0] csr_axi_rresp, // required by AXI standard. not used
+  output  logic                                   csr_axi_rvalid,
+  input   wire                                    csr_axi_rready,
+
+  //global memory, AXI4 master, runs on ddr clock and core_resetn
+
+  output logic    [C_DDR_AXI_THREAD_ID_WIDTH-1:0] ddr_axi_awid, // required by AXI standard. not used
+  output logic         [C_DDR_AXI_ADDR_WIDTH-1:0] ddr_axi_awaddr,
+  output logic       [AXI_BURST_LENGTH_WIDTH-1:0] ddr_axi_awlen,
+  output logic         [AXI_BURST_SIZE_WIDTH-1:0] ddr_axi_awsize,
+  output logic         [AXI_BURST_TYPE_WIDTH-1:0] ddr_axi_awburst,
+  output logic                              [2:0] ddr_axi_awprot, // required by AXI standard. not used
+  output logic                                    ddr_axi_awvalid,
+  input  wire                                     ddr_axi_awready,
+  output logic         [C_DDR_AXI_DATA_WIDTH-1:0] ddr_axi_wdata,
+  output logic       [C_DDR_AXI_DATA_WIDTH/8-1:0] ddr_axi_wstrb,
+  output logic                                    ddr_axi_wlast,
+  output logic                                    ddr_axi_wvalid,
+  input  wire                                     ddr_axi_wready,
+  input  wire     [C_DDR_AXI_THREAD_ID_WIDTH-1:0] ddr_axi_bid, // required by AXI standard. not used
+  input  wire                                     ddr_axi_bvalid,
+  output logic                                    ddr_axi_bready,
+  output logic    [C_DDR_AXI_THREAD_ID_WIDTH-1:0] ddr_axi_arid,
+  output logic         [C_DDR_AXI_ADDR_WIDTH-1:0] ddr_axi_araddr,
+  output logic       [AXI_BURST_LENGTH_WIDTH-1:0] ddr_axi_arlen,
+  output logic         [AXI_BURST_SIZE_WIDTH-1:0] ddr_axi_arsize,
+  output logic         [AXI_BURST_TYPE_WIDTH-1:0] ddr_axi_arburst,
+  output logic                              [2:0] ddr_axi_arprot, // required by AXI standard. not used
+  output logic                                    ddr_axi_arvalid,
+  input  wire                                     ddr_axi_arready,
+  input  wire     [C_DDR_AXI_THREAD_ID_WIDTH-1:0] ddr_axi_rid,
+  input  wire          [C_DDR_AXI_DATA_WIDTH-1:0] ddr_axi_rdata,
+  input  wire                                     ddr_axi_rvalid,
+  output logic                                    ddr_axi_rready
+);
+
+@@ set count 0
+@@ set condition "if"
+@@ foreach arch $archs {
+@@ if {$count != 0} {
+@@    set condition "else if"
+@@ }
+${condition} (ARCH_OPTION == "${arch}") begin
+  dla_top_wrapper_${arch} dla_top_inst
+  (
+    //clocks and resets, all resets are not synchronized
+    .ddr_clk                    (ddr_clk),
+    .dla_clk                    (dla_clk),
+    .irq_clk                    (irq_clk),
+    .dla_resetn                 (dla_resetn),
+
+    //interrupt request, AXI4 stream master without data, runs on pcie clock
+    .o_interrupt_level          (irq_level),
+
+    //CSR, AXI4 lite slave, runs on ddr clock
+    .i_csr_arvalid              (csr_axi_arvalid),
+    .i_csr_araddr               (csr_axi_araddr),
+    .o_csr_arready              (csr_axi_arready),
+    .o_csr_rvalid               (csr_axi_rvalid),
+    .o_csr_rdata                (csr_axi_rdata),
+    .i_csr_rready               (csr_axi_rready),
+    .i_csr_awvalid              (csr_axi_awvalid),
+    .i_csr_awaddr               (csr_axi_awaddr),
+    .o_csr_awready              (csr_axi_awready),
+    .i_csr_wvalid               (csr_axi_wvalid),
+    .i_csr_wdata                (csr_axi_wdata),
+    .o_csr_wready               (csr_axi_wready),
+    .o_csr_bvalid               (csr_axi_bvalid),
+    .i_csr_bready               (csr_axi_bready),
+
+    //global memory, AXI4 master, runs on ddr clock
+    .o_ddr_arvalid              (ddr_axi_arvalid),
+    .o_ddr_araddr               (ddr_axi_araddr),
+    .o_ddr_arlen                (ddr_axi_arlen),
+    .o_ddr_arsize               (ddr_axi_arsize),
+    .o_ddr_arburst              (ddr_axi_arburst),
+    .o_ddr_arid                 (ddr_axi_arid),
+    .i_ddr_arready              (ddr_axi_arready),
+    .i_ddr_rvalid               (ddr_axi_rvalid),
+    .i_ddr_rdata                (ddr_axi_rdata),
+    .i_ddr_rid                  (ddr_axi_rid),
+    .o_ddr_rready               (ddr_axi_rready),
+    .o_ddr_awvalid              (ddr_axi_awvalid),
+    .o_ddr_awaddr               (ddr_axi_awaddr),
+    .o_ddr_awlen                (ddr_axi_awlen),
+    .o_ddr_awsize               (ddr_axi_awsize),
+    .o_ddr_awburst              (ddr_axi_awburst),
+    .i_ddr_awready              (ddr_axi_awready),
+    .o_ddr_wvalid               (ddr_axi_wvalid),
+    .o_ddr_wdata                (ddr_axi_wdata),
+    .o_ddr_wstrb                (ddr_axi_wstrb),
+    .o_ddr_wlast                (ddr_axi_wlast),
+    .i_ddr_wready               (ddr_axi_wready),
+    .i_ddr_bvalid               (ddr_axi_bvalid),
+    .o_ddr_bready               (ddr_axi_bready)
+  );
+end
+@@set count 1
+@@}
+@@ set fatal_command "\$fatal"
+else begin
+  ${fatal_command}( 1, "Architecture Chosen is invalid" );
+end
+
+endmodule
+
+`default_nettype wire
