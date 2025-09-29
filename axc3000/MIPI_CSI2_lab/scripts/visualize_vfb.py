@@ -22,9 +22,9 @@ import serial.tools.list_ports
 import re
 
 def find_system_console():
-    """Find system-console executable in D:\altera_pro\25.1.1\syscon\bin"""
+    """Find system-console executable in C:\altera_pro\25.1.1\syscon\bin"""
     # Use only the specific Altera Pro 25.1.1 installation path
-    system_console_path = r"D:\altera_pro\25.1.1\syscon\bin\system-console.exe"
+    system_console_path = r"C:\altera_pro\25.1.1\syscon\bin\system-console.exe"
     
     try:
         # Check if file exists
