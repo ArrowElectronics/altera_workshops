@@ -501,7 +501,6 @@ def select_com_port():
     while True:
         try:
             choice = input(f"\nSelect COM port (1-{len(available_ports)}): ")
-            choice = 1
             port_index = int(choice) - 1
             
             if 0 <= port_index < len(available_ports):

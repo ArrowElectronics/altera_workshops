@@ -47,7 +47,7 @@ end component resetip;
 --	port (
 --		source : out std_logic_vector(1 downto 0)
 --	);
-end component jtag_source;
+--end component jtag_source;
 	
 signal tempclk : std_logic;
 
