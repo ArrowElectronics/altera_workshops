@@ -1054,6 +1054,7 @@ int main()
 
     // activate sign of life in FPGA
     IOWR_ALTERA_AVALON_PIO_DATA(RGB_PIO_BASE, 0x03);  // Only Red LED on
+    usleep(500000);
 
     // enable I2C ports
     camera_i2c_dev = alt_avalon_i2c_open(CAMERA_I2C_NAME);
@@ -1062,11 +1063,6 @@ int main()
     }
     //set the address of the MIPI I2C slave device
     alt_avalon_i2c_master_target_set(camera_i2c_dev,MIRA220_i2c_addr);
-
-    // Register the interrupt handlers
-	alt_ic_isr_register (MIPI_SYSTEM_0_VVP_VFW_IRQ_INTERRUPT_CONTROLLER_ID, MIPI_SYSTEM_0_VVP_VFW_IRQ, VFW_isr, NULL, NULL);
-	// Enable VFW IRQ in the Interrupt Controller
-	alt_ic_irq_enable (MIPI_SYSTEM_0_VVP_VFW_IRQ_INTERRUPT_CONTROLLER_ID, MIPI_SYSTEM_0_VVP_VFW_IRQ);
 
     // start at mid exposure
     exp_time_index = 6;
@@ -1336,19 +1332,24 @@ alt_u8 init_MIRA220 () {
 		//alt_putchar('.');
 	}
 
-	alt_putstr("\r\n");
-	//Software Trigger.IMAGER_STATE(0)
-	poke(MIRA220_IMAGER_STATE_REG,MIRA220_IMAGER_MASTER_EXPOSURE,1);
-
 	// set exposure
 	poke(MIRA220_REG_EXPOSURE,   exp_time[exp_time_index] & 0x0FF, 1);
 	poke(MIRA220_REG_EXPOSURE+1, exp_time[exp_time_index] >> 8, 1);
 
-	usleep (500000);
+	alt_putstr("\r\n");
+	//Software Trigger.IMAGER_STATE(0)
+	poke(MIRA220_IMAGER_STATE_REG,MIRA220_IMAGER_MASTER_EXPOSURE,1);	
 
 	//Software Trigger.IMAGER_RUN(0)
 	poke(MIRA220_IMAGER_RUN_REG,MIRA220_IMAGER_RUN_START,1);
     usleep (500000);
+
+
+
+    // Register the interrupt handlers
+	alt_ic_isr_register (MIPI_SYSTEM_0_VVP_VFW_IRQ_INTERRUPT_CONTROLLER_ID, MIPI_SYSTEM_0_VVP_VFW_IRQ, VFW_isr, NULL, NULL);
+	// Enable VFW IRQ in the Interrupt Controller
+	alt_ic_irq_enable (MIPI_SYSTEM_0_VVP_VFW_IRQ_INTERRUPT_CONTROLLER_ID, MIPI_SYSTEM_0_VVP_VFW_IRQ);	
 
 	return 0;
 }
