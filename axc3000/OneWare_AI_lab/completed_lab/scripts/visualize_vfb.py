@@ -22,13 +22,18 @@ import serial.tools.list_ports
 import re
 
 def find_system_console():
-    """Find system-console executable in C:\altera_pro\25.1.1\syscon\bin"""
     # Use only the specific Altera Pro 25.1.1 installation path
-    system_console_path = r"C:\altera_pro\25.1.1\syscon\bin\system-console.exe"
+    path1 = r"C:\altera_pro\25.1.1\syscon\bin\system-console.exe"
+    path2 = r"C:\altera_pro\25.1.1\qprogrammer\syscon\bin\system-console.exe"
+    # system_console_path = r"C:\altera_pro\25.1.1\syscon\bin\system-console.exe"
     
     try:
         # Check if file exists
-        if Path(system_console_path).exists():
+        if os.path.exists(path1):
+            system_console_path = path1
+            return system_console_path
+        elif os.path.exists(path2):
+            system_console_path = path2
             return system_console_path
     except:
         pass
@@ -501,7 +506,6 @@ def select_com_port():
     while True:
         try:
             choice = input(f"\nSelect COM port (1-{len(available_ports)}): ")
-            choice = 1
             port_index = int(choice) - 1
             
             if 0 <= port_index < len(available_ports):

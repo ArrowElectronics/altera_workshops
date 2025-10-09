@@ -8,13 +8,18 @@ system_console_process = None
 system_console_initialized = False
 
 def find_system_console():
-    """Find system-console executable in C:\altera_pro\25.1.1\syscon\bin"""
     # Use only the specific Altera Pro 25.1.1 installation path
-    system_console_path = r"C:\altera_pro\25.1.1\syscon\bin\system-console.exe"
+    path1 = r"C:\altera_pro\25.1.1\syscon\bin\system-console.exe"
+    path2 = r"C:\altera_pro\25.1.1\qprogrammer\syscon\bin\system-console.exe"
+    # system_console_path = r"C:\altera_pro\25.1.1\syscon\bin\system-console.exe"
     
     try:
         # Check if file exists
-        if Path(system_console_path).exists():
+        if os.path.exists(path1):
+            system_console_path = path1
+            return system_console_path
+        elif os.path.exists(path2):
+            system_console_path = path2
             return system_console_path
     except:
         pass
@@ -36,7 +41,7 @@ def initialize_system_console():
         return False
     
     try:
-        #print(f"Initializing System Console at: {system_console}")
+        print(f"Initializing System Console at: {system_console}")
         #print("Loading one_ai.tcl (one-time setup)...")
         
         # Start System Console in interactive mode (hidden)
