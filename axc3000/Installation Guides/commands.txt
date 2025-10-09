@@ -1,0 +1,65 @@
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+wsl --set-default-version 2
+
+reboot windows and open PowerShell with admin. priviledges
+
+wsl --install -d Ubuntu-22.04  (select username = altera, password = agilex3, when prompted)
+
+sudo apt update 
+sudo apt install wget
+wget https://apt.kitware.com/ubuntu/pool/main/c/cmake/cmake_3.31.6-0kitware1ubuntu22.04.1_amd64.deb
+wget https://apt.kitware.com/ubuntu/pool/main/c/cmake/cmake-data_3.31.6-0kitware1ubuntu22.04.1_all.deb
+sudo dpkg -i cmake-data_3.31.6-0kitware1ubuntu22.04.1_all.deb
+sudo dpkg -i cmake_3.31.6-0kitware1ubuntu22.04.1_amd64.deb
+
+sudo mkdir /opt/altera
+cd /opt/altera/
+sudo cp ~/altera-fpga-ai-suite-ubuntu-2025.1.1_amd64.deb /opt/altera/
+
+sudo apt install --reinstall libappstream4
+sudo apt install /opt/altera/altera-fpga-ai-suite-ubuntu-2025.1.1_amd64.deb 
+
+sudo apt update
+sudo apt upgrade -y
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt update
+sudo apt install python3.12-venv -y
+python3.12 -V
+
+mkdir ~/build-openvino-dev
+cd ~/build-openvino-dev/
+python3.12 -m venv openvino_env
+source openvino_env/bin/activate
+
+sudo mkdir /opt/intel
+mkdir ~/Downloads
+cd ~/Downloads/
+
+curl -L https://storage.openvinotoolkit.org/repositories/openvino/packages/2024.6/linux/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64.tgz --output openvino_2024.6.0.tgz
+tar -xf openvino_2024.6.0.tgz 
+sudo mv l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/ /opt/intel/openvino_2024.6.0
+
+cd /opt/intel/openvino_2024.6.0/install_dependencies/
+sudo -E ./install_openvino_dependencies.sh 
+
+cd /opt/intel/
+sudo ln -s openvino_2024.6.0/ openvino_2024
+
+source /opt/intel/openvino_2024/setupvars.sh 
+
+python3 -m pip install --upgrade pip
+pip install "openvino_dev[caffe, pytorch, tensorflow]==2024.6.0"
+
+sudo apt update
+sudo apt install libopencv-dev python3-opencv
+pip install opencv-python
+
+source ~/build-openvino-dev/openvino_env/bin/activate
+unset python_version
+source /opt/intel/openvino_2024/setupvars.sh 
+
+sudo apt update
+sudo apt install python3-pip -y
+pip3 install torch onnx torchsummary
+exit

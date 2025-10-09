@@ -5,7 +5,7 @@ Use this file to copy commands into the PowerShell or Ubuntu WSL shell, as direc
 lines. They have line extensions \ at the end. Copy these commands acroos multiple line from the beginning to the 
 end and then paste them into the shell.
 
-8.1.2	Type ‘wsl -d Ubuntu-20.04’ in the PowerShell
+8.1.2	Type ‘wsl -d Ubuntu-22.04’ in the PowerShell
 
 8.2.1	export PATH="/mnt/c/altera_pro/25.1.1/syscon/bin:$PATH"
 
@@ -70,7 +70,7 @@ $COREDLA_WORK/runtime/build_Release/dla_benchmark/dla_benchmark \
 -plugins emulation -dump_output
 
 11.3.6	Type the following command in the second Ubuntu shell
-wsl -d Ubuntu-20.04
+wsl -d Ubuntu-22.04
 
 11.3.8	Type the following commands in the second Ubuntu shell
 cd ~/coredla_work/work
