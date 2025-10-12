@@ -111,3 +111,4 @@ set_global_assignment -name IP_FILE ip/niosv_system/sysclk_bridge_o.ip
 set_global_assignment -name IP_FILE ip/niosv_system/lw_uart.ip
 set_global_assignment -name IP_FILE ip/niosv_system/one_ai_interface_0.ip
 set_global_assignment -name IP_FILE ip/niosv_system/image_source_0.ip
+set_global_assignment -name OPTIMIZATION_MODE "SUPERIOR PERFORMANCE"
