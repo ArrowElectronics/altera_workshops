@@ -1,0 +1,48 @@
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_TOOL_VERSION "25.1.1"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_TOOL_VENDOR_NAME "Intel Corporation"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_TOP_LEVEL_COMPONENT_NAME "altera_in_system_sources_probes"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name PRE_COMPILED_MODULE "ON"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name OCS_IP_FILE [file join $::quartus(qip_path) "../jtag_source.ip"]
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name OCS_IP_TYPE "altera_in_system_sources_probes"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name OCS_IP_VERSION "19.2.1"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name OCS_IP_HASH "ux5rtni"
+set_global_assignment -library "jtag_source" -name SOPCINFO_FILE [file join $::quartus(qip_path) "jtag_source.sopcinfo"]
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name SLD_INFO "QSYS_NAME jtag_source HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "jtag_source" -name MISC_FILE [file join $::quartus(qip_path) "jtag_source.cmp"]
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_TARGETED_DEVICE_FAMILY "Agilex 3"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_GENERATED_DEVICE_FAMILY "{Agilex 3}"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "jtag_source" -name MISC_FILE [file join $::quartus(qip_path) "../jtag_source.ip"]
+
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_NAME "YWx0c291cmNlX3Byb2JlX3RvcA=="
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_DISPLAY_NAME "SW4tU3lzdGVtIFNvdXJjZXMgJiBQcm9iZXMgSVA="
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_AUTHOR "QWx0ZXJh"
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_VERSION "MTkuMi4x"
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_DESCRIPTION "SW4tc3lzdGVtIHNvdXJjZXMgJiBwcm9iZXMgZGVidWdnaW5nIG1lZ2FmdW5jdGlvbi4gIFRoZSBJbi1TeXN0ZW0gU291cmNlcyBhbmQgUHJvYmVzIG1lZ2FmdW5jdGlvbiBpcwphdmFpbGFibGUgZm9yIGFsbCBBbHRlcmEgZGV2aWNlIGZhbWlsaWVzIHN1cHBvcnRlZCBieSB0aGUgUXVhcnR1cyBQcmltZSBzb2Z0d2FyZS4="
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_GROUP "QmFzaWMgRnVuY3Rpb25zL1NpbXVsYXRpb247IERlYnVnIGFuZCBWZXJpZmljYXRpb24vRGVidWcgYW5kIFBlcmZvcm1hbmNl"
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL3pjbjE1MTM5ODcyODI5MzUuaHRtbCNtd2gxNDA5OTU4ODI4NzMy"
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuaW50ZWwuY29tL2NvbnRlbnQvd3d3L3VzL2VuL3Byb2dyYW1tYWJsZS9kb2N1bWVudGF0aW9uL25mYzE1MTM5ODk5MDk3ODMuaHRtbCNtd2gxNDEwMzg0OTQ1NjA3"
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly9kb2N1bWVudGF0aW9uLmFsdGVyYS5jb20vIy9saW5rL213aDE0MTAzODUxMTczMjUvbXdoMTQxMDM4NDk0NTYwNw=="
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly9kb2N1bWVudGF0aW9uLmFsdGVyYS5jb20vIy9saW5rL2hjbzE0MjE2OTgwNDIwODcvaGNvMTQyMTY5ODAxMzQwOA=="
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_COMPONENT_NAME "anRhZ19zb3VyY2U="
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "jtag_source" -library "jtag_source" -name IP_COMPONENT_VERSION "MS4w"
+
+
+set_global_assignment -library "altera_in_system_sources_probes_1921" -name VERILOG_FILE [file join $::quartus(qip_path) "altera_in_system_sources_probes_1921/synth/altsource_probe_top.v"]
+set_instance_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name SDC_ENTITY_FILE [file join $::quartus(qip_path) "altera_in_system_sources_probes_1921/synth/altera_in_system_sources_probes.sdc"] -no_sdc_promotion 
+set_global_assignment -library "jtag_source" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/jtag_source.v"]
+
+
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_TOOL_NAME "altera_in_system_sources_probes"
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_TOOL_VERSION "19.2.1"
+set_global_assignment -entity "altsource_probe_top" -library "altera_in_system_sources_probes_1921" -name IP_TOOL_ENV "QsysPrimePro"
+

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.10.29.11:37:01"
+ outputDirectory="C:/altera_workshops/axc3000/My_First_Lab/completed_lab/jtag_source/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Agilex 3"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="A3CY100BM16AE7S"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_BOARD"
+     type="String"
+     defaultValue="default"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="sources" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="source" direction="output" role="source" width="2" />
+  </interface>
+ </perimeter>
+ <entity kind="jtag_source" version="1.0" name="jtag_source">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="A3CY100BM16AE7S" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Agilex 3" />
+  <parameter name="AUTO_BOARD" value="default" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="C:\altera_workshops\axc3000\My_First_Lab\completed_lab\jtag_source\synth\jtag_source.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:\altera_workshops\axc3000\My_First_Lab\completed_lab\jtag_source\synth\jtag_source.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/altera_workshops/axc3000/My_First_Lab/completed_lab/jtag_source.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/altera_pro/25.1.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="jtag_source">"Generating: jtag_source"</message>
+   <message level="Info" culprit="jtag_source">"Generating: altsource_probe_top"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_in_system_sources_probes"
+   version="19.2.1"
+   name="altsource_probe_top">
+  <parameter name="create_source_clock" value="false" />
+  <parameter name="instance_id" value="NONE" />
+  <parameter name="source_initial_value" value="0" />
+  <parameter name="sld_auto_instance_index" value="YES" />
+  <parameter name="sld_instance_index" value="0" />
+  <parameter name="probe_width" value="0" />
+  <parameter name="source_width" value="2" />
+  <parameter name="create_source_clock_enable" value="false" />
+  <parameter name="device_family" value="Agilex 3" />
+  <parameter name="enable_metastability" value="NO" />
+  <parameter name="gui_use_auto_index" value="true" />
+  <generatedFiles>
+   <file
+       path="C:\altera_workshops\axc3000\My_First_Lab\completed_lab\jtag_source\altera_in_system_sources_probes_1921\synth\altsource_probe_top.v"
+       attributes="" />
+   <file
+       path="C:\altera_workshops\axc3000\My_First_Lab\completed_lab\jtag_source\altera_in_system_sources_probes_1921\synth\altera_in_system_sources_probes.sdc"
+       attributes="NO_SDC_PROMOTION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:\altera_workshops\axc3000\My_First_Lab\completed_lab\jtag_source\altera_in_system_sources_probes_1921\synth\altsource_probe_top.v"
+       attributes="" />
+   <file
+       path="C:\altera_workshops\axc3000\My_First_Lab\completed_lab\jtag_source\altera_in_system_sources_probes_1921\synth\altera_in_system_sources_probes.sdc"
+       attributes="NO_SDC_PROMOTION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/altera_pro/25.1.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="jtag_source" as="in_system_sources_probes_0" />
+  <messages>
+   <message level="Info" culprit="jtag_source">"Generating: altsource_probe_top"</message>
+  </messages>
+ </entity>
+</deploy>
